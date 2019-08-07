@@ -1,5 +1,5 @@
-#〇.技术面试指导  
--------（必须）--------     
+# 〇.技术面试指导  
+**必备项**     
 0.自我介绍  
 表达流畅，不要太差即可
 
@@ -40,8 +40,8 @@ java + 数据库+web前端+jsp/servlet+ssm +boot/cloud+ 2-3非培训机构标配
 	（5）描述：技术+文字  ， 项目周期：半年以上  ， 写几个？ 3以内 ：  2-3     毕业：1-2   
 
 4.表达沟通能力  
-  
------加分-------  
+
+**加分项**   
 1.高并发/分布式  
 	a.多线程（juc,aqs,线程安全，锁机制，生产消费者）  
 	b.数据处理  
@@ -69,7 +69,7 @@ github发布一个项目(star很多) 、 博客、公众号、
 建议： 个人解决的能力、团队、沟通  
 
 
-#一.重载和重写的区别
+# 一.重载和重写的区别
 
 |  | 方法名 | 参数列表 | 返回值 | 访问修饰符 | 抛出异常|
 |- | - | - | - | - | -|
@@ -78,16 +78,17 @@ github发布一个项目(star很多) 、 博客、公众号、
 
 
 
-#二.常见集合框架的底层数据结构  
+# 二.常见集合框架的底层数据结构  
 
 题外话1：List和Set的上级接口是Collection，但Collection与Map之间不存在继承/实现关系。  
 题外话2：本文中的是否“唯一”，是指集合中的元素值是否可以重复。  
 有序/无序，是指输入集合的顺序 是否和 集合的存储顺序一致（或理解为输出顺序），例如，向集合依次输入a、b、c后，如果打印时也输出a、b、c就代表“有序”；如果打印时输出的是a、c、b（或b、a、c等）就代表“无序”。
 
+
 Collection(不唯一、无序)
-##1List(不唯一、有序)
+## 1List(不唯一、有序)
 - Arraylist： 线程不安全，Object数组 ，默认长度是10。  
-扩容机制：当超过数组容量时，新数组是原来数组的1.5倍。JDK中的源码是：
+扩容机制：当超过数组容量时，新数组是原来数组的1.5倍。JDK中的源码是：  
 ```   
 private void grow(int minCapacity) 
 {  
@@ -121,19 +122,19 @@ LinkedList： 双向链表(JDK1.6之前为循环链表，JDK1.7取消了循环) 
     }
 ```
 
-##2Set
+## 2Set
 HashSet（唯一，无序）: 线程不安全，基于HashMap实现的，底层采用 HashMap 来保存元素  
 LinkedHashSet： LinkedHashSet继承自HashSet，并且其内部是通过 LinkedHashMap来实现的。  
 TreeSet（有序，唯一）： 红黑树
 
-##3Map（以key-value形式存储数据，通过key取value。key不能重复，value可以重复。）
+## 3Map（以key-value形式存储数据，通过key取value。key不能重复，value可以重复。）
 HashMap：线程不安全，通过ConcurrentHashMap解决。JDK1.8之前HashMap由数组+链表组成的，数组是HashMap的主体（默认初始容量为16），数组中的每个元素是链表的形式。JDK1.8以后，当链表长度大于阈值（默认为8）时，将链表转化为红黑树，以减少搜索时间。 HashMap的加载因子为0.75：当元素个数 超过 容量长度的0.75倍 时，进行扩容。扩容增量：原容量的2倍.  
 LinkedHashMap: LinkedHashMap 继承自HashMap。LinkedHashMap在上面结构的基础上，增加了一条双向链表，使得HashMap的结构可以保持键值对的插入顺序。同时通过对链表进行相应的操作，实现了访问顺序相关逻辑。  
 HashTable: 数组+链表组成的，数组是 HashMap 的主体，链表则是主要为了解决哈希冲突而存在的
 TreeMap: 红黑树  
 ConcurrentHashMap：JDK8以前的ConcurrentHashMap间接的实现了Map<K,V>，并将每一个元素称为一个segment（默认16个），每个segment都是一个HashEntry<K,V>数组，数组的每个元素都是一个HashEntry的单向队列。JDK8以后，HashMap/ConcurrentHashMap的存储结构发生了改变：增加了条件性的“红黑树”。为了优化查询，当链表中的元素超过 8 个时，HashMap就会将该链表转换为红黑树，即采用了数组+链表/红黑树的存储结构。
 
-#三.Arraylist 与 LinkedList 异同
+# 三.Arraylist 与 LinkedList 异同  
 **（1）是否保证线程安全**： ArrayList 和 LinkedList 都是线程不安全；  
 **（2）底层数据结构**： Arraylist 底层使用的是Object数组；LinkedList  底层使用的是双向链表数据结构（JDK1.6之前为循环链表，JDK1.7取消了循环）  
 **（3）插入和删除是否受元素位置的影响**：  
@@ -141,9 +142,9 @@ ConcurrentHashMap：JDK8以前的ConcurrentHashMap间接的实现了Map<K,V>，�
 *LinkedList*采用链表存储，所以插入，删除元素时间复杂度不受元素位置的影响，都是近似 O(1)而数组为近似 O(n)。  
 **（4）是否支持快速随机访问**： LinkedList 不支持高效的随机元素访问，而 ArrayList 支持。快速随机访问就是通过元素的序号快速获取元素对象(对应于get(int index) 方法)。  
 **（5）内存空间占用**：  ArrayList的空  间浪费主要体现在在list列表的结尾会预留一定的容量空间，而LinkedList的空间花费则体现在它的每一个元素都需要消耗比ArrayList更多的空间（因为要存放直接后继和直接前驱以及数据）。
- 
 
-#四.试述Forward和Redirect的区别
+
+# 四.试述Forward和Redirect的区别  
 **（1）转发（Forword）是服务器行为，重定向（Redirect）是客户端行为**  
 **转发**可以通过HttpServletRequest对象的getRequestDispatcher()方法链式调用forward()方法实现，如request.getRequestDispatcher().forward()。
 **重定向**是利用服务器返回的状态吗来实现的。客户端浏览器请求服务器的时候，服务器会返回一个状态码。服务器通过HttpServletRequestResponse的setStatus(int status)方法设置状态码。如果服务器返回301或者302，则浏览器会到新的网址重新请求该资源。转发可以通过HttpServletResponse对象的sendRedirect()方法实现。  
@@ -152,7 +153,7 @@ ConcurrentHashMap：JDK8以前的ConcurrentHashMap间接的实现了Map<K,V>，�
 **（4）实际运用**:  转发:一般用于用户登陆的时候,根据角色转发到相应的模块.  重定向:一般用于用户注销登陆时返回主页面和跳转到其它的网站等  
 **（5）效率**： 转发:高. 重定向:低.
 
-#五.如何设计一个秒杀系统？    
+# 五.如何设计一个秒杀系统？    
 
 什么秒杀：  流量很大，库存少
 
@@ -169,7 +170,9 @@ ConcurrentHashMap：JDK8以前的ConcurrentHashMap间接的实现了Map<K,V>，�
 熔断：客户端 -> service() , beiYong(){return "未响应，请重试"}
 降级：服务端 ：  20个服务->减少到10个服务
 
-
 防止重复消费行为：幂等性  
 	zs ：支付->支付服务(扣款)->返回（支付成功）
 	幂等性实现：去重表，在每次支付前，先查看去重表中 是否有扣款记录。如果有，则返回文字提示“已扣款，请稍等响应页面”；如果没有，再执行扣款
+
+
+

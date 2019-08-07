@@ -1,4 +1,4 @@
-package interview.day02;
+package interview.print123;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
