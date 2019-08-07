@@ -1,4 +1,4 @@
-package interview.print123.finaldemo;
+package interview.finaldemo;
 
 public class FinalDemo01 {
 //    final  int num = 10 ;
