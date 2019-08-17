@@ -1,6 +1,6 @@
 
 
-# 一个类的声明能否 既是abstract，又是final？如下所示。
+## 一个类的声明能否 既是abstract，又是final？如下所示。
 ```
 abstract final class A  
 
@@ -27,7 +27,7 @@ B b = new B();
 
 
 
-# 如何给final修饰成员变量的初始化赋值？
+## 如何给final修饰成员变量的初始化赋值？
 这个问题有两种情况。  
 **情况一：没有static**  
 只有final，没有static时，既可以通过=直接赋值，也可以通过构造方法赋值，如下。  
@@ -79,7 +79,7 @@ final修饰的变量，执行时机：运行时被初始化（直接赋值，也
 static final修饰的变量，执行时机： 在javac时（编译）生成ConstantValue属性，在类加载的过程中根据ConstantValue属性值为该字段赋值。ConstantValue属性值 没有默认值，必须显示的通过=赋值。  
 
 
-# 为什么对于一个public及final修饰的变量，一般建议声明为static？
+## 为什么对于一个public及final修饰的变量，一般建议声明为static？
 
 ```
 public class A{
@@ -92,7 +92,7 @@ public class A{
 由于final修饰的变量不可改变，因此不用考虑并发问题。
 
 
-# InterfaceA是接口， InterfaceA  []a = new InterfaceA[2];是否正确？
+## InterfaceA是接口， InterfaceA  []a = new InterfaceA[2];是否正确？
 
 正确。  
 
@@ -105,10 +105,10 @@ public class A{
 
 
 
- 
 
 
 
- 
 
- 
+
+
+
