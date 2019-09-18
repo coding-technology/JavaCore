@@ -1,0 +1,214 @@
+# JVM： java virtua Machine
+
+jdk中包含了jvm和“屏蔽操作系统差异的组件”
+
+- jvm各个操作系统之上是一致的
+- “屏蔽操作系统差异的组件：在各个PC上各不相同（联想下载jdk，不同系统 需要下载不同版本的jdk）
+
+![1568186168727](jvm.assets/1568186168727.png)
+
+
+
+## 类的生命周期
+
+生命周期： 类的加载->连接->初始化->使用->卸载
+
+-  类的加载
+
+  查找并加载类的二进制数据（class文件）
+
+  硬盘上的class文件 加载到jvm内存中
+
+- 连接 ：确定类与类之间的关系  ； student.setAddress( address ); 
+
+  - 验证
+
+    .class 正确性校验
+
+  - 准备
+
+    static静态变量分配内存，并赋初始化默认值值
+
+    static int num =  10 ;  在准备阶段，会把num=0，之后（初始化阶段）再将0修改为10
+
+    在准备阶段，JVM中只有类，没有对象。
+
+    初始化顺序： static ->非static ->构造方法
+
+    public class Student{
+
+    ​	static int age ; //在准备阶段，将age = 0 ;
+
+    ​	String name ; 
+
+    }
+
+    
+
+  - 解析:把类中符号引用，转为直接引用
+
+    前期阶段，还不知道类的具体内存地址，只能使用“com.yanqun.pojo.Student ”来替代Student类，“com.yanqun.pojo.Student ”就称为符号引用；
+
+    在解析阶段，JVM就可以将 “com.yanqun.pojo.Student ”映射成实际的内存地址，会后就用 内存地址来代替Student，这种使用 内存地址来使用 类的方法 称为直接引用。
+
+ - 初始化：给static变量 赋予正确的值
+
+static int num =  10 ;  在连接的准备阶段，会把num=0，之后（初始化阶段）再将0修改为10
+
+ - 使用： 对象的初始化、对象的垃圾回收、对象的销毁
+ - 卸载
+
+
+
+jvm结束生命周期的时机：
+
+- 正常结束
+- 异常结束/错误  
+- System.exit()
+- 操作系统异常
+
+
+
+## JVM内存模型（Java Memoery Model，简称JMM）
+
+JMM:用于定义（所有线程的共享变量， 不能是局部变量）变量的访问规则
+
+JMM将内存划分为两个区： 主内存区、工作内存区
+
+- 主内存区 ：真实存放变量
+- 工作内存区：主内存中变量的副本，供各个线程所使用
+
+
+
+注意：1.各个线程只能访问自己私有的工作内存（不能访问其他线程的工作内存，也不能访问主内存）
+
+2.不同线程之间，可以通过主内存 简介的访问其他线程的工作内存
+
+
+
+完整的研究：不同线程之间交互数据时 经历的步骤：
+
+1.Lock:将主内存中的变量，表示为一条线程的独占状态
+
+2.Read：将主内存中的变量，读取到工作内存中
+
+3.Load：将2中读取的变量拷贝到变量副本中
+
+4.Use：把工作内存中的变量副本，传递给线程去使用
+
+5.Assign:把线程正在使用的变量，传递给工作内存中的变量副本中
+
+6.Store:将工作内存中变量副本的值，传递到主内存中
+
+7.Write：将变量副本作为一个主内存中的变量进行存储
+
+8.Unlock:解决线程的独占状态
+
+![1568776570724](jvm笔记.assets/1568776570724.png)
+
+JVM要求以上的8个动作必须是原子性的;jvm但是对于64位的数据类型（long double）有些非原子性协议。说明什么问题：在执行以上8个操作时，可能会出现 只读取（写入等）了半个long/double数据，因此出现错误。如何避免？ 1.商用JVM已经充分考虑了此问题，无需我们操作  2.可以通过volatile避免此类问题（读取半个数据的问题）   volatile double num ;
+
+## volatile 
+
+概念：JVM提供的一个轻量级的同步机制
+
+作用：
+
+1.防止JVM对long/double等64位的费原子性协议进行的误操作（读取半个数据）
+
+2.可以使变量对所有的线程立即可见（某一个线程如果修改了 工作内存中的变量副本，那么加上volatile 之后，该变量就会立刻同步到其他线程的工作内存中）
+
+3.禁止指令的“重排序”优化
+
+
+
+原子性 ： num = 10 ;
+
+非原子性： int num = 10 ; -> int num ;   num =10 ;
+
+
+
+重排序：排序的对象就是 原子性操作，目的是为了提高执行效率，优化
+
+```java
+int a  =10 ; //1    int a ; a = 10 ;
+int b ;//2
+b = 20 ;//3
+int c = a * b ;//4
+```
+
+重排序“不会影响**单线程**的执行结果”，因此以上程序在经过重排序后，可能的执行结果：1,2,3,4 ；2,3,1,4
+
+```java
+//2 3 1 4
+int b ;
+b = 20 ;
+int a  =10 ;
+int c = a * b ;
+```
+
+
+
+```java
+package com.yanqun;
+//双重检查式的懒汉式单例模式
+public class Singleton {
+    private static Singleton instance = null ;//单例
+    private Singleton(){}
+    public static Singleton getInstance(){
+        if(instance == null){
+            synchronized (Singleton.class){
+                if(instance == null){
+                    instance = new Singleton() ;//不是一个原子性操作
+                }
+            }
+        }
+        return instance ;
+    }
+}
+
+
+```
+
+以上代码可能会出现问题，原因 instance = new Singleton() 不是一个原子性操作，会在执行时拆分成以下动作：
+
+1.JVM会分配内存地址、内存空间
+
+2.使用构造方法实例化对象
+
+3.instance = 第1步分配好的内存地址
+
+根据重排序的知识，可知，以上3个动作在真正执行时 可能1、2、3，也可能是1、3、2
+
+如果在多线程环境下，使用1、3、2可能出现问题：
+
+假设线程A刚刚执行完以下步骤（即刚执行 1、3，但还没有执行2）
+
+1正常0x123 ,  ...
+
+3instance=0x123
+
+此时，线程B进入单例程序的if，直接会得到Instance对象（注意，此instance是刚才线程A并没有new的对象）,就去使用该对象，例如instance.xxx() 则必然报错。解决方案，就是 禁止此程序使用1 3 2 的重排序顺序。解决：
+
+```
+  private volatile static Singleton instance = null ;//单例
+```
+
+volatile是通过“内存屏障”防止重排序问题：
+
+1.在volatile写操作前，插入StoreStore屏障
+
+2.在volatile写操作后，插入StoreLoad屏障
+
+3.在volatile读操作后，插入LoadLoad屏障
+
+4.在volatile读操作后，插入LoadStore屏障
+
+
+
+
+
+
+
+
+
