@@ -39,8 +39,11 @@ public class MyConsumer {
                     String tags = messageExt.getTags();
                     String keys = messageExt.getKeys();
                     try {
+//                        if(tags.equals("mytag11")){
+                   if("mytag11".equals(tags)){
                         String body =   new String(  messageExt.getBody(), RemotingHelper.DEFAULT_CHARSET);
-                        System.out.println("消费："+topic+ "，\t"+tags+ "，\t"+keys+ "，\t"+body);
+                        System.out.println("消费："+topic+ "，\t"+tags+ "，\t"+keys+ "，\t"+body  );
+                        }
                     } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                         //获取重试次数

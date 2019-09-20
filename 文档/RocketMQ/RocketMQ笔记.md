@@ -557,21 +557,22 @@ rocketmq.config.namesrvAddr=192.168.2.128:9876;192.168.2.129:9876
 异步
 
 ```java
-          //2发送异步消息
-                /*
-                发送异步消息之后：有2个线程：a.Main线程，发送完毕 立刻执行以后的程序 ；
-                                b.处理消息的线程 ，并在处理完毕后 触发回调函数onSuccess（）\onException()
-
-                producer.send(message, new SendCallback() {
-                    @Override
-                    public void onSuccess(SendResult sendResult) {
-                        System.out.println("发送成功："+sendResult);
-                    }
-                    @Override
-                    public void onException(Throwable throwable) {
-                        System.out.println("发送失败，异常："+ throwable.getMessage());
-                    }
-                }); */
+//2发送异步消息
+/*
+  发送异步消息之后：有2个线程：a.Main线程，发送完毕 立刻执行以后的程序 ；
+  b.处理消息的线程 ，并在处理完毕后 触发回调函数
+  onSuccess（）\onException()
+*/
+producer.send(message, new SendCallback() {
+    @Override
+    public void onSuccess(SendResult sendResult) {
+        System.out.println("发送成功："+sendResult);
+    }
+    @Override
+    public void onException(Throwable throwable) {
+        System.out.println("发送失败，异常："+ throwable.getMessage());
+    }
+}); 
 ```
 
 
@@ -593,9 +594,9 @@ rocketmq.config.namesrvAddr=192.168.2.128:9876;192.168.2.129:9876
 
 
 
-## 消费模式
+## Push Consumer消费模式
 
-默认集群模式：
+### 默认集群模式：
 
 ```
    consumer.setMessageModel(MessageModel.CLUSTERING);
@@ -603,15 +604,50 @@ rocketmq.config.namesrvAddr=192.168.2.128:9876;192.168.2.129:9876
 
 搭建消费者集群：只需要将groupName设置相同即可
 
+![1568959735585](RocketMQ笔记.assets/1568959735585.png)
 
+延迟：
+
+不支持任意的时间精度，只支持几下几种
+
+默认配置，/usr/rocketmq/conf/broker.conf（默认配置）
 
 messageDelayLevel = 1s 5s 10s 30s 1m 2m 3m 4m 5m 6m 7m 8m 9m 10m 20m 30m 1h 2h
 
+定义：生产者立刻将消息发送到队列， 在队列中停留一些时间后 发送给消费者
+
+![1568961292364](RocketMQ笔记.assets/1568961292364.png)
+
+```java
+message.setDelayTimeLevel(3);
+```
+
+### 广播模式
+
+特点：最大的不同，将全部的消息内容，给每个消费者各一份（每个消费者 拥有一套完整的 消息数据）
+
+不需groupName相同
+
+设置成广播模式：消费者
+
+```java
+        //设置成广播模式
+        consumer.setMessageModel(MessageModel.BROADCASTING) ;
+```
 
 
 
+设置订阅标签
+
+```java
+ consumer.subscribe("mytopic1","tag1");
+ consumer.subscribe("mytopic1","*");
+ consumer.subscribe("mytopic1","tag1||tag2");
+```
 
 
+
+###  
 
 
 

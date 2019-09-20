@@ -1,7 +1,6 @@
 package com.yanqun.producer;
 
 import com.yanqun.api.CONST;
-import org.apache.rocketmq.client.exception.MQBrokerException;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendCallback;
@@ -9,7 +8,7 @@ import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.remoting.exception.RemotingException;
 
-public class MyProducer {
+public class MyProducer2 {
 
     public static void main(String[] args) {
         //创建生产者
@@ -27,7 +26,7 @@ public class MyProducer {
                     tags:标签（二级目录）
                     keys + body :  以key-value的形式 存放内容
              */
-            Message message = new Message("mytopic1","mytag11", "key2"+i,("mymq"+i) .getBytes());
+            Message message = new Message("mytopic1","mytag12", "key2"+i,("mymq"+i) .getBytes());
             //发送延迟消息 的延迟级别：从1开始数
 //            message.setDelayTimeLevel(3);
             //生产者发送消息
