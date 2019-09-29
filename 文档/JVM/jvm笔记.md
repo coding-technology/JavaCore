@@ -382,6 +382,490 @@ gc：类的元数据（描述类的信息）、常量池
 
 
 
+## 类的使用方式
+
+类的初始化：JVM只会在**“首次主动使用”**一个类/接口时，才会初始化它们 。
+
+## 主动使用
+
+1.new 构造类的使用 
+
+```java
+package init;
+
+public class Test1 {
+
+    static{
+        System.out.println("Test1...");
+    }
+
+    public static void main(String[] args) {
+        new Test1();//首次主动使用
+        new Test1();
+    }
+}
+
+```
+
+结果：Test1...
+
+
+
+2.访问类/接口的 静态成员（属性、方法）
+
+```java
+package init;
+class A{
+    static int i  = 10;
+
+    static{
+        System.out.println("A...");
+    }
+
+     static void method(){
+        System.out.println("A method...");
+    }
+}
+
+public class Test2 {
+    public static void main(String[] args) {
+
+//        A.i = 1 ;
+//        A.i = 1 ;
+//        System.out.println(A.i);
+        A.method();
+
+    }
+}
+
+```
+
+注：main()本身也是一个静态方法，也此main()的所在类 也会在执行被初始化
+
+特殊情况：
+
+- 如果成员变量既是static，又是final ，即常量，则不会被初始化
+- 上一种情况中，如果常量的值 是一个随机值，则会被初始化 (为了安全)
+
+
+
+3. 使用Class.forName("init.B")执行反射时使用的类（B类）
+4. 初始化一个子类时，该子类的父类也会被初始化
+
+```java
+public class Son extends  Father {
+    public static void main(String[] args) {
+        new Son();
+    }
+}
+
+```
+
+5.动态语言在执行所涉及的类 也会被初始化（动态代理）
+
+
+
+## 被动使用
+
+除了主动以外，其他都是被动使用。
+
+```java
+package init;
+class BD
+{
+    static {
+        System.out.println("BD...");
+    }
+}
+
+public class BeiDong {
+    public static void main(String[] args) {
+        BD[] bds = new BD[3];
+
+    }
+}
+
+```
+
+以上代码，不属于主动使用类，因此不会被初始化。
+
+
+
+## 助记符
+
+
+
+反编译： cd到class目录中， javap -c class文件名
+
+
+
+
+
+Test.java  ->                    javap -c Test.java
+
+javap反编译的是class文件
+
+应该：xx.java -> xx.class ->javap
+
+
+
+aload_0: 装载了一个引用类型
+
+ Invokespecial:  init,  private  , super.method() :  \<init\>存放的是初始化代码的位置
+
+getstatic ：获取静态成员
+
+bipush ： 整数范围 -128  -- 127之内  (8位带符号的整数),放到栈顶
+
+sipush:    >127   (16个带符号的整数),放到栈顶
+
+注意：无论是定义int或short 等，只要在 -128 --127以内 都是bipush，否则是sipush.
+
+注意：特殊：-1  -- 5不是bipush
+
+​		 iconst_m1（-1）  iconst_0   iconst_1 ....  iconst_5
+
+
+
+ldc  : int  float String 常量 ,放到栈顶
+
+ldc2_w :long  double常量,放到栈顶
+
+
+
+## JVM四种引用级别
+
+如果一个对象存在着指向它的引用，那么这个对象就不会被GC回收？  -- 局限性
+
+Object obj = new Object() ; --强引用
+
+
+
+根据引用的强弱关系： 强引用>软引用>弱引用>虚引用
+
+
+
+## 强引用
+
+Object obj = new Object() ;
+
+约定： 引用 obj，引用对象new Object()
+
+强引用对象什么失效？
+
+1.生命周期结束（作用域失效）
+
+```java
+public void method(){
+  
+  Object obj = new Object() ;
+}//当方法执行完毕后，强引用指向的 引用而对象new Object()就会等待被GC回收
+```
+
+2.引用被置为null，引用对象被GC回收
+
+```
+obj = null ;//此时，没有任何引用指向new Object() 因此，new Object() 就会等待被GC回收
+```
+
+除了以上两个情况以外，其他任何时候GC都不会回收强引用对象。
+
+## 软引用
+
+根据JVM内存情况： 如果内存充足，GC不会随便的回收软引用对象；如果JVM内存不足，则GC就会主动的回收软引用对象。
+
+
+
+各种引用的出处：
+
+强引用:new
+
+软引用 弱引用 虚引用 （最终引用）：Reference
+
+软引用：java.lang.ref.SoftReference
+
+Reference中有一个get()方法，用于返回 所引用的对象
+
+```
+SoftReference<SoftObject> softRef = new SoftReference<>(new SoftObject() );
+```
+
+softRef.get()  -->返回引用所指向的SoftObject对象本身
+
+```java
+package ref;
+
+import java.lang.ref.SoftReference;
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+//软引用对象
+class SoftObject{}
+public class SoftReferenceDemo {
+    public static void main(String[] args) throws Exception {
+        //softRef  -->SoftObject  设计模式中的：装饰模式
+        SoftReference<SoftObject> softRef = new SoftReference<>(new SoftObject() );
+        List<byte[]> list = new ArrayList<>();
+
+        //开启一个线程，监听 是否有软引用已经被回收
+        new Thread(  ()->{
+        while(true) {
+            if (softRef.get() == null) ;//软引用对象
+            {
+                System.out.println("软引用对象已被回收..");
+                System.exit(0);
+            }
+        }
+        }  ,"线程A" ) .start();     //lambda
+
+
+        //不断的往集合中 存放数据，模拟内存不足
+        while(true){
+//          Thread.sleep(10);
+            if(softRef.get() != null)
+                list.add(new byte[1024*1024]) ;//每次向list中增加1m内容
+        }
+
+
+    }
+}
+
+```
+
+
+
+## 弱引用
+
+回收的时机：只要GC执行，就会将弱引用对象进行回收。
+
+java.lang.ref.WeakReference\<T\>
+
+```java
+package ref;
+
+import java.lang.ref.WeakReference;
+
+public class WeakReferenceDemo {
+    public static void main(String[] args) throws Exception {
+
+        WeakReference<Object> weakRef = new WeakReference<>(new Object());
+        //weakRef->Object
+
+        System.out.println( weakRef.get()==null   ? "已被回收":"没被回收"  );
+
+        System.gc();//建议GC执行一次回收（存在概率）
+        Thread.sleep(100);
+
+        System.out.println( weakRef.get()==null   ? "已被回收":"没被回收"  );
+
+    }
+}
+
+
+```
+
+## 虚引用（幻影引用或者幽灵引用）
+
+java.lang.ref.PhantomReference\<T\>
+
+是否使用虚引用，和引用对象本身 没有任何关系； 无法通过虚引用来获取对象本身.
+
+引用get() -> 引用对象
+
+虚引用get() -> null
+
+虚引用不会单独使用，一般会和 引用队列（java.lang.ref.ReferenceQueue）一起使用。
+
+价值： 当gc回收一个对象，如果gc发现 此对象还有一个虚引用，就会将虚引用放入到 引用队列中，之后（当虚引用出队之后）再去回收该对象。因此，我们可以使用 虚引用+引用对象 实现：在对象被gc之前，进行一些额外的其他操作。
+
+ GC ->如果有虚引用->虚引用入队->虚引用出队-> 回收对象
+
+```java
+package ref;
+
+import java.lang.ref.PhantomReference;
+import java.lang.ref.ReferenceQueue;
+
+class MyObject {
+
+}
+
+public class PhantomReferenceDemo {
+
+
+    public static void main(String[] args) throws Exception {
+        MyObject obj = new MyObject();
+        //引用队列
+        ReferenceQueue queue = new ReferenceQueue();
+
+        //虚引用+引用队列
+        PhantomReference<MyObject> phantomRef = new PhantomReference<>(obj, queue);
+
+        //让gc执行一次回收操作
+        obj = null;
+        System.gc();
+        Thread.sleep(30);
+        System.out.println("GC执行...");
+
+        //GC-> 虚引用->入队->出队->     obj
+        System.out.println(queue.poll());
+
+
+    }
+}
+
+
+```
+
+特殊情况：如果虚引用对象重写了finalize()，那么JVM会延迟 虚引用的入队时间。
+
+```java
+package ref;
+
+import java.lang.ref.PhantomReference;
+import java.lang.ref.ReferenceQueue;
+
+class MyObject3 {
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+        System.out.println("即将被回收之前...");
+    }
+}
+
+public class PhantomReferenceDemo2 {
+
+
+    public static void main(String[] args) throws Exception {
+        MyObject3 obj = new MyObject3();
+        //引用队列
+        ReferenceQueue queue = new ReferenceQueue();
+
+        //虚引用+引用队列
+        PhantomReference<MyObject3> phantomRef = new PhantomReference<>(obj, queue);
+
+        //让gc执行一次回收操作
+        obj = null;
+
+        System.gc();
+//        Thread.sleep(30);
+        System.out.println("GC执行...");
+
+        //GC-> 虚引用->入队->出队->     obj
+        System.out.println(queue.poll());//虚引用并没有入队
+
+        System.gc();
+//        Thread.sleep(30);
+        System.out.println("GC执行...");
+
+        //GC-> 虚引用->入队->出队->     obj
+        System.out.println(queue.poll());//虚引用延迟到了第二次gc时入队
+
+        System.gc();
+//        Thread.sleep(30);
+        System.out.println("GC执行...");
+
+        //GC-> 虚引用->入队->出队->     obj
+        System.out.println(queue.poll());
+
+        System.gc();
+        Thread.sleep(30);
+        System.out.println("GC执行...");
+
+        //GC-> 虚引用->入队->出队->     obj
+        System.out.println(queue.poll());
+
+
+    }
+}
+
+```
+
+
+
+final class Finalizer extends FinalReference：最终引用
+
+构造方法()  -> 析构函数()，在java中存在Finalizer  可以帮我们自动的回收一些不需要的对象，因此不需要写析构函数。   
+
+jvm能够直接操作的是：非直接内存 
+
+直接内存：native （操作系统中的内存，而不是jvm内存）
+
+jvm不能操作 直接内存（非jvm操作的内容）时，而恰好 此区域的内容 又忘了关闭，此时Finalizer就会将这些内存进行回收。
+
+
+
+## 使用软引用实现缓存的淘汰策略
+
+java ->缓存( 90% ->60%)  ->   db(iphone)
+
+LRU
+
+一般的淘汰策略：
+
+根据容量/缓存个数 + LRU 进行淘汰。
+
+在java中 还可以用引用实现 淘汰策略。
+
+MyObject obj = new MyObject();//强引用，不会被GC回收
+
+map.put( id   ,   obj ) ;
+
+
+
+Map.put(id,  软引用(obj) )；//当jvm内存不足时，会主动回收。
+
+
+
+```java
+package ref;
+
+import java.lang.ref.SoftReference;
+import java.util.HashMap;
+import java.util.Map;
+
+class MyObject10{}
+
+public class SoftDemo {
+
+    //map: key:id  ,value:对象的软引用  （拿对象： 对象的软引用 .get() ）
+    Map<String, SoftReference<MyObject10>> caches = new HashMap<>();
+    //java -> caches -> db
+    //set: db->caches
+    //get: java->cache
+
+
+    void setCaches(String id,MyObject10 obj){
+        caches.put( id,   new SoftReference<MyObject10>(obj) );
+
+    }
+
+    MyObject10 getCache(String id){
+        SoftReference<MyObject10> softRef = caches.get(id) ;
+       return  softRef == null ?  null : softRef.get()  ;
+    }
+    //优势：当jvm内存不足时，gc会自动回收软引用。因此本程序 无需考虑 OOM问题。
+
+
+
+}
+
+```
+
+
+
+
+
+ 
+
+
+
+
+
+
+
 
 
 
