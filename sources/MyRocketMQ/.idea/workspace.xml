@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="07ba8abc-2250-45e7-90f8-347e6a4f084d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yanqun/RequestInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yanqun/RequestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumerOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumerSQL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumerTx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yanqun/producer/MyProducerBatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yanqun/producer/MyProducerOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yanqun/producer/MyProducerSQL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yanqun/producer/MyProducerTx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yanqun/pull/PullConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yanqun/pull/PullConsumerSchedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../文档/JVM/jvm笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../文档/JVM/jvm笔记.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../文档/RocketMQ/RocketMQ笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../文档/RocketMQ/RocketMQ笔记.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaSE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaSE/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>PROPERTY_DELAY_TIME_LEVEL</find>
+      <find>fetchConsumeOffset</find>
+      <find>MQPullConsumer</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumer3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/producer/MyProducer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumerBroadCast2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/producer/MyProducer2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumer2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/pull/PullConsumer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/pull/PullConsumerSchedule.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/RequestInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/RequestService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/producer/MyProducerOrder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/producer/MyProducerBatch.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/producer/MyProducerSQL.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumerSQL.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumerOrder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumerBroadCast1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/producer/MyProducerTx.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumerTx.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\mqmvn" />
+        <option name="mavenHome" value="D:/apache-maven-3.5.0" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.5.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="185" />
+    <option name="y" value="125" />
+    <option name="width" value="1150" />
+    <option name="height" value="575" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MyRocketMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyRocketMQ" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyRocketMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyRocketMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyRocketMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyRocketMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyRocketMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyRocketMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyRocketMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyRocketMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yanqun" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyRocketMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyRocketMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yanqun" type="462c0819:PsiDirectoryNode" />
+              <item name="comsumer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyRocketMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyRocketMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yanqun" type="462c0819:PsiDirectoryNode" />
+              <item name="producer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyRocketMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="MyRocketMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.rocketmq:rocketmq-client:4.4.0" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="MyRocketMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.rocketmq:rocketmq-client:4.4.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="rocketmq-client-4.4.0.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyRocketMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.rocketmq:rocketmq-client:4.4.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="rocketmq-client-4.4.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyRocketMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.rocketmq:rocketmq-client:4.4.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="rocketmq-client-4.4.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="producer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyRocketMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.rocketmq:rocketmq-common:4.4.0" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="MyRocketMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.rocketmq:rocketmq-common:4.4.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="rocketmq-common-4.4.0.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyRocketMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.rocketmq:rocketmq-common:4.4.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="rocketmq-common-4.4.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyRocketMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.rocketmq:rocketmq-common:4.4.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="rocketmq-common-4.4.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="message" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yanqun.comsumer" />
+      <recent name="com.yanqun.producer" />
+      <recent name="com.yanqun.pull" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.MyConsumerTx">
+    <configuration name="MyConsumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yanqun.comsumer.MyConsumer" />
+      <module name="MyRocketMQ" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yanqun.comsumer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyConsumerBroadCast1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yanqun.comsumer.MyConsumerBroadCast1" />
+      <module name="MyRocketMQ" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yanqun.comsumer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyConsumerOrder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yanqun.comsumer.MyConsumerOrder" />
+      <module name="MyRocketMQ" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yanqun.comsumer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyConsumerTx" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yanqun.comsumer.MyConsumerTx" />
+      <module name="MyRocketMQ" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yanqun.comsumer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyProducerTx" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yanqun.producer.MyProducerTx" />
+      <module name="MyRocketMQ" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yanqun.producer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MyConsumerTx" />
+        <item itemvalue="Application.MyProducerTx" />
+        <item itemvalue="Application.MyConsumer" />
+        <item itemvalue="Application.MyConsumerBroadCast1" />
+        <item itemvalue="Application.MyConsumerOrder" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="07ba8abc-2250-45e7-90f8-347e6a4f084d" name="Default Changelist" comment="" />
+      <created>1568248224535</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568248224535</updated>
+      <workItem from="1568248240790" duration="667000" />
+      <workItem from="1568251629224" duration="1771000" />
+      <workItem from="1568426455358" duration="757000" />
+      <workItem from="1568428467047" duration="1602000" />
+      <workItem from="1568433798902" duration="1390000" />
+      <workItem from="1568767129022" duration="530000" />
+      <workItem from="1568777828677" duration="38000" />
+      <workItem from="1568958647320" duration="7291000" />
+      <workItem from="1569241592969" duration="251000" />
+      <workItem from="1570603476979" duration="8068000" />
+      <workItem from="1571140489867" duration="23000" />
+      <workItem from="1571141527793" duration="373000" />
+      <workItem from="1571197206221" duration="712000" />
+      <workItem from="1571205912388" duration="7855000" />
+      <workItem from="1571216876124" duration="2064000" />
+      <workItem from="1571471506452" duration="524000" />
+      <workItem from="1571472343249" duration="3985000" />
+      <workItem from="1571478281876" duration="584000" />
+      <workItem from="1571538198631" duration="595000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="39080000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49716714" visible="true" weight="0.24798928" />
+      <window_info id="Structure" order="1" sideWeight="0.5028329" side_tool="true" weight="0.3558981" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31161472" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3512748" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="bottom" id="Messages" order="14" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49716714" visible="true" weight="0.24463807" />
+      <window_info id="Structure" order="1" sideWeight="0.5028329" side_tool="true" weight="0.3558981" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31161472" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3512748" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="bottom" id="Messages" order="14" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-common/4.4.0/rocketmq-common-4.4.0.jar!/org/apache/rocketmq/common/message/Message.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="131" column="38" selection-start-line="131" selection-start-column="38" selection-end-line="131" selection-end-column="38" />
+          <folding>
+            <element signature="e#3526#3527#0" expanded="true" />
+            <element signature="e#3590#3591#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-common/4.4.0/rocketmq-common-4.4.0-sources.jar!/org/apache/rocketmq/common/message/MessageConst.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumer3.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumerBroadCast2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="18" column="74" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-client/4.4.0/rocketmq-client-4.4.0.jar!/org/apache/rocketmq/client/consumer/store/RemoteBrokerOffsetStore.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="29" column="59" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-client/4.4.0/rocketmq-client-4.4.0.jar!/org/apache/rocketmq/client/consumer/store/LocalFileOffsetStore.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-client/4.4.0/rocketmq-client-4.4.0.jar!/org/apache/rocketmq/client/consumer/store/OffsetStore.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-client/4.4.0/rocketmq-client-4.4.0.jar!/org/apache/rocketmq/client/consumer/PullStatus.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-common/4.4.0/rocketmq-common-4.4.0-sources.jar!/org/apache/rocketmq/common/message/MessageExt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/学习/RocketMQ核心技术精讲与高并发抗压实战/资料/rocketmq-code-master/rocketmq-code/rocketmq-api/src/main/java/com/bfxy/rocketmq/consumer/pull/PullConsumerSchedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-client/4.4.0/rocketmq-client-4.4.0.jar!/org/apache/rocketmq/client/consumer/PullTaskContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-client/4.4.0/rocketmq-client-4.4.0.jar!/org/apache/rocketmq/client/consumer/MQPullConsumer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/producer/MyProducer2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="31" column="21" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-client/4.4.0/rocketmq-client-4.4.0.jar!/org/apache/rocketmq/client/consumer/PullTaskCallback.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.8.0_101/src.zip!/java/util/concurrent/Future.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="103" column="43" selection-start-line="103" selection-start-column="43" selection-end-line="103" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/pull/PullConsumerSchedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/pull/PullConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-client/4.4.0/rocketmq-client-4.4.0.jar!/org/apache/rocketmq/client/consumer/DefaultMQPushConsumer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-client/4.4.0/rocketmq-client-4.4.0.jar!/org/apache/rocketmq/client/consumer/MQPullConsumerScheduleService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-client/4.4.0/rocketmq-client-4.4.0.jar!/org/apache/rocketmq/client/consumer/DefaultMQPullConsumer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-client/4.4.0/rocketmq-client-4.4.0.jar!/org/apache/rocketmq/client/producer/MessageQueueSelector.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="74" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-common/4.4.0/rocketmq-common-4.4.0-sources.jar!/org/apache/rocketmq/common/message/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="171" column="17" lean-forward="true" selection-start-line="171" selection-start-column="11" selection-end-line="171" selection-end-column="17" />
+          <folding>
+            <element signature="e#1969#1970#0" expanded="true" />
+            <element signature="e#2023#2024#0" expanded="true" />
+            <element signature="e#5011#5012#0" expanded="true" />
+            <element signature="e#5038#5039#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/RequestInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="26" />
+          <folding>
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#361#362#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/producer/MyProducerBatch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="33" column="55" lean-forward="true" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/producer/MyProducerOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="38" column="19" lean-forward="true" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/RequestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="24" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1118#1119#0" expanded="true" />
+            <element signature="e#1162#1163#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-client/4.4.0/rocketmq-client-4.4.0.jar!/org/apache/rocketmq/client/impl/MQClientAPIImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="1622" selection-start-line="1622" selection-end-line="1622" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/api/CONST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/producer/MyProducerSQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="31" column="88" selection-start-line="31" selection-start-column="88" selection-end-line="31" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumerSQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/producer/MyProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="26" column="33" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-client/4.4.0/rocketmq-client-4.4.0.jar!/org/apache/rocketmq/client/producer/DefaultMQProducer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="32" column="68" lean-forward="true" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-client/4.4.0/rocketmq-client-4.4.0.jar!/org/apache/rocketmq/client/producer/MQProducer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-client/4.4.0/rocketmq-client-4.4.0.jar!/org/apache/rocketmq/client/producer/TransactionMQProducer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="111" column="52" lean-forward="true" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mqmvn/org/apache/rocketmq/rocketmq-client/4.4.0/rocketmq-client-4.4.0.jar!/org/apache/rocketmq/client/producer/TransactionListener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumerOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumer2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumerBroadCast1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="24" column="40" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/comsumer/MyConsumerTx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yanqun/producer/MyProducerTx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="49" column="17" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
