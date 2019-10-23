@@ -6,7 +6,7 @@ public class TestVolatile {
 //    static volatile  int num =  0;
     static AtomicInteger num = new AtomicInteger(0) ;
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(Math[] args) throws InterruptedException {
         for(int i=0;i<100;i++){
             //每个线程：将num类似3万次；100个线程 在线程安全时，结果应该300万
             new Thread( () ->{

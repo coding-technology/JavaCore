@@ -1182,3 +1182,456 @@ class MyDefineCL{
 loadClassData(String name)： 是文件形式的字符串a/b/c.class，并且开头out.production..
 
 findClass(String name):是全类名的形式  a.b.c.class，并且开头 是： 包名.类名.class
+
+
+
+操作思路：
+
+要先将 .class文件从classpath中删除，之后才可能用到 自定义类加载器；否在classpath中的.class会被 APPClassLoader加载
+
+
+
+```java
+package com.yanqun.parents;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+//public class MyException extends Exception{...}
+public class MyClassLoaderImpl  extends ClassLoader{
+    private String path ; //null
+        //优先使用的类加载器是：getSystemClassLoader()
+        public MyClassLoaderImpl(){
+            super();
+        }
+
+        public MyClassLoaderImpl(ClassLoader parent){//扩展类加载器
+            super(parent);
+        }
+        //com.yq.xx.class
+        public Class findClass(String name) {
+            System.out.println("findClass...");
+              byte[] b = loadClassData(name);
+              return defineClass(name, b, 0, b.length);
+          }
+
+          //“com/yq/xxx.class” ->  byte[]
+          private byte[] loadClassData(String name)  {
+              System.out.println("加载loadClassData...");
+              if(path != null){//name: com.yanqun.parents.MyDefineCL
+                  name = path+ name.substring(  name.lastIndexOf(".")+1  )+".class" ;
+              }else{
+                  //classpath ->APPClassLoader
+                  name =  dotToSplit("out.production.MyJVM."+name)+".class" ;
+              }
+
+
+
+
+              byte[] result = null ;
+              FileInputStream inputStream = null ;
+              ByteArrayOutputStream output = null ;
+              try {
+                 inputStream = new FileInputStream( new File(  name)  );
+                //inputStream -> byte[]
+                 output = new ByteArrayOutputStream();
+
+                byte[] buf = new byte[2];
+                int len = -1;
+                while ((len = inputStream.read(buf)) != -1) {
+                    output.write(buf, 0, len);
+                }
+                result = output.toByteArray();
+            }catch (Exception e){
+                    e.printStackTrace(); ;
+            }finally {
+                  try {
+                      if(inputStream != null )inputStream.close();
+                      if(output != null ) output.close();
+                  }catch (Exception e){
+                      e.printStackTrace();
+                  }
+            }
+            return result ;
+          }
+
+    public static void main(String[] args) throws Exception {
+        System.out.println("main...");
+        //自定义加载器的对象
+        MyClassLoaderImpl myClassLoader = new MyClassLoaderImpl();//默认在双亲委派时，会根据正规流程：系统——》扩展->根
+
+        myClassLoader.path = "d:/" ;
+
+        //MyClassLoaderImpl myClassLoader = new MyClassLoaderImpl();//直接指定某个 具体的的委派
+        Class<?> aClass = myClassLoader.loadClass("com.yanqun.parents.MyDefineCL");
+        System.out.println(aClass.getClassLoader());
+//        MyDefineCL myDefineCL = (MyDefineCL)( aClass.newInstance()) ;
+    }
+
+    public static String dotToSplit(String clssName){  return clssName.replace(".","/") ;  }
+
+}
+
+
+class MyDefineCL{
+    public void say(){
+        System.out.println("Say...");
+    }
+}
+```
+
+代码流程：
+
+```
+loadClass() ->findClass()->loadClassData()
+```
+
+一般而言，启动类加载loadClass()；
+
+**实现自定义加载器，只需要：**
+
+ 	**1.继承ClassLoader**
+
+**2重写的 findClass()**
+
+
+
+情况一：用APPClassLoader
+
+classpath中的MyDefineCL.class文件：
+
+1163157884
+1163157884
+
+d盘中的MyDefineCL.class文件：
+
+356573597
+
+说明，类加载器 只会把同一个类 加载一次； 同一个class文件  加载后的位置
+
+
+
+结论：
+
+自定义加载器 加载.class文件的流程：
+
+先委托APPClassLoader加载，APPClassLoader会在classpath中寻找是否存在，如果存在 则直接加载；如果不存在，才有可能交给 自定义加载器加载。
+
+```java
+package com.yanqun.parents;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+//public class MyException extends Exception{...}
+public class MyClassLoaderImpl  extends ClassLoader{
+    private String path ; //null
+        //优先使用的类加载器是：getSystemClassLoader()
+        public MyClassLoaderImpl(){
+            super();
+        }
+
+        public MyClassLoaderImpl(ClassLoader parent){//扩展类加载器
+            super(parent);
+        }
+        //com.yq.xx.class
+        public Class findClass(String name) {
+//            System.out.println("findClass...");
+              byte[] b = loadClassData(name);
+              return defineClass(name, b, 0, b.length);
+          }
+
+          //“com/yq/xxx.class” ->  byte[]
+          private byte[] loadClassData(String name)  {
+//              System.out.println("加载loadClassData...");
+              if(path != null){//name: com.yanqun.parents.MyDefineCL
+//                  System.out.println("去D盘加载;;");
+                  name = path+ name.substring(  name.lastIndexOf(".")+1  )+".class" ;
+              }
+
+              byte[] result = null ;
+              FileInputStream inputStream = null ;
+              ByteArrayOutputStream output = null ;
+              try {
+                 inputStream = new FileInputStream( new File(  name)  );
+                //inputStream -> byte[]
+                 output = new ByteArrayOutputStream();
+
+                byte[] buf = new byte[2];
+                int len = -1;
+                while ((len = inputStream.read(buf)) != -1) {
+                    output.write(buf, 0, len);
+                }
+                result = output.toByteArray();
+            }catch (Exception e){
+                    e.printStackTrace(); ;
+            }finally {
+                  try {
+                      if(inputStream != null )inputStream.close();
+                      if(output != null ) output.close();
+                  }catch (Exception e){
+                      e.printStackTrace();
+                  }
+            }
+            return result ;
+          }
+
+    public static void main(String[] args) throws Exception {
+//        System.out.println("main...");
+        //自定义加载器的对象
+//        MyClassLoaderImpl myClassLoader = new MyClassLoaderImpl();//默认在双亲委派时，会根据正规流程：系统——》扩展->根
+//        myClassLoader.path = "d:/" ;
+//        Class<?> aClass = myClassLoader.loadClass("com.yanqun.parents.MyDefineCL");
+//        System.out.println(aClass.hashCode());
+
+        MyClassLoaderImpl myClassLoader2 = new MyClassLoaderImpl();//默认在双亲委派时，会根据正规流程：系统——》扩展->根
+        Class<?> aClass2 = myClassLoader2.loadClass("com.yanqun.parents.MyDefineCL");
+        System.out.println(aClass2.hashCode());
+
+
+//        System.out.println(aClass.getClassLoader());
+//        MyDefineCL myDefineCL = (MyDefineCL)( aClass.newInstance()) ;
+    }
+
+    public static String dotToSplit(String clssName){  return clssName.replace(".","/") ;  }
+
+}
+
+
+class MyDefineCL{
+    public void say(){
+        System.out.println("Say...");
+    }
+}
+```
+
+通过以下源码可知，在双亲委派体系中，“下面”的加载器 是通过parent引用 “上面”的加载器。即在双亲委派体系中，各个加载器之间不是继承关系。
+
+```java
+public abstract class ClassLoader {
+
+    private static native void registerNatives();
+    static {
+        registerNatives();
+    }
+
+    // The parent class loader for delegation
+    // Note: VM hardcoded the offset of this field, thus all new fields
+    // must be added *after* it.
+    private final ClassLoader parent;
+```
+
+ClassLoader源码解读
+
+```java
+    protected Class<?> loadClass(String name, boolean resolve)
+        throws ClassNotFoundException
+    {
+        synchronized (getClassLoadingLock(name)) {
+            // First, check if the class has already been loaded
+            Class<?> c = findLoadedClass(name);
+            if (c == null) {
+                long t0 = System.nanoTime();
+                try {
+                   //如果“父类”不为空，则委托“父类”加载
+                    if (parent != null) {
+                        c = parent.loadClass(name, false);
+                    } else {
+                        //如果“父类”为空，说明是双亲委派的顶层了，就调用顶层的加载器（BootstrapClassLoader）
+                        c = findBootstrapClassOrNull(name);
+                    }
+                } catch (ClassNotFoundException e) {
+                    // ClassNotFoundException thrown if class not found
+                    // from the non-null parent class loader
+                }
+				//如果“父类”加载失败，则只能自己加载（自定义加载器中的findClass()方法）
+                if (c == null) {
+                    // If still not found, then invoke findClass in order
+                    // to find the class.
+                    long t1 = System.nanoTime();
+                    c = findClass(name);
+
+                    // this is the defining class loader; record the stats
+                    sun.misc.PerfCounter.getParentDelegationTime().addTime(t1 - t0);
+                    sun.misc.PerfCounter.getFindClassTime().addElapsedTimeFrom(t1);
+                    sun.misc.PerfCounter.getFindClasses().increment();
+                }
+            }
+            if (resolve) {
+                resolveClass(c);
+            }
+            return c;
+        }
+    }
+```
+
+双亲委派机制优势： 可以防止用户自定义的类 和 rt.jar中的类重名，而造成的混乱
+
+自定义一个java.lang.Math(和jdk中rt.jar中的类重名)
+
+```java
+package java.lang;
+
+public class Math {
+    public static void main(String[] args) {
+        System.out.println("hello Math...");
+    }
+}
+
+```
+
+运行结果：
+
+![1571816579201](jvm笔记.assets/1571816579201.png)
+
+原因：根据双亲委派， 越上层的加载器越优先执行。最顶层的加载器是 根加载器，根加载器就会加载rt.jar中的类。因此rt.jar中的Math会被优先加载。 即程序最终加载的是不是我们自己写的Math，而是jdk/rt.jar中 内置的Math;而内置的Math根本没有提供main()方法，因此报 无法找到main()。
+
+
+
+
+
+实验：将相关联的类A.class和B.class分别用 不同的类加载器加载
+
+**A和B是继承关系**
+
+```java
+public class B{
+    public B(){
+        System.out.println("B被加载了，加载器是： "+ this.getClass().getClassLoader());//对象使用之前，必然先把此对象对应的类加载
+    }
+}
+
+public class A extends  B
+{
+    public A(){
+        super();
+        System.out.println("A被加载了，加载器是： "+ this.getClass().getClassLoader());//对象使用之前，必然先把此对象对应的类加载
+    }
+}
+//AppClassLoader.class : TestMyClassLoader2
+//自定义加载器: A.class/B.class
+public class TestMyClassLoader2 {
+    public static void main(String[] args) throws Exception{
+        MyClassLoaderImpl myClassLoader = new MyClassLoaderImpl() ;
+        //自定义加载路径
+        myClassLoader.path = "d:/" ;
+        Class<?> aClass = myClassLoader.loadClass("com.yanqun.parents.A");
+        Object aObject = aClass.newInstance();//newInstance()会调用 该类的构造方法(new 构造方法())
+        System.out.println(aObject);
+    }
+}
+
+```
+
+**A和B不是继承关系**
+
+```java
+public class Y {
+    public Y(){
+        System.out.println("Y被加载了，加载器是： "+ this.getClass().getClassLoader());//对象使用之前，必然先把此对象对应的类加载
+    }
+}
+public class X {
+    public X(){
+        new Y() ;//加载Y（系统加载器）
+        System.out.println("X被加载了，加载器是： "+ this.getClass().getClassLoader());//对象使用之前，必然先把此对象对应的类加载
+    }
+}
+
+//AppClassLoader.class : TestMyClassLoader2
+//自定义加载器: A.class/B.class
+public class TestMyClassLoader3 {
+    public static void main(String[] args) throws Exception{
+        MyClassLoaderImpl myClassLoader = new MyClassLoaderImpl() ;
+        //自定义加载路径
+        myClassLoader.path = "d:/" ;
+        //程序第一次加载时（X），使用的是  自定义加载器
+        Class<?> aClass = myClassLoader.loadClass("com.yanqun.parents.X");
+
+
+
+        Object aObject = aClass.newInstance();//newInstance()会调用 该类的构造方法(new 构造方法())
+        System.out.println(aObject);
+    }
+}
+```
+
+
+
+```java
+存在继承关系
+
+A.class:  classpath
+B.class:   classpath
+原因
+同一个AppClassLoader 会同时加载A.class和B.class
+
+--
+A.class:   d:\
+
+B.class:   classpath
+原因
+A.class：自定义加载器加载
+B.class：被AppClassLoader加载
+因此，加载A.class和B.class的不是同一个加载器
+
+
+IllegalAccess
+---
+A.class:    classpath
+
+B.class:    d:\	
+NoClassDefFoundError
+原因:
+A.class: 被AppClassLoader加载  
+B.class: 自定义加载器加载
+因此，加载A.class和B.class的不是同一个加载器
+
+--
+A.class	d:\
+B.class d:\
+TestMyClassLoader2 can not access a member of class com.yanqun.parents.A with modifiers "public"
+A.class/B.class: 自定义加载器加载
+原因是 main()方法所在类在 工程中（APPClassLoader），而A和B不在工程中（自定义加载器）。
+
+
+造成这些异常的核心原因： 命名空间（不是由同一个类加载器所加载）
+
+
+----
+没有继承关系
+
+X.class:  D:		自定义加载器
+Y.class:  classpath	系统加载器
+
+Y被加载了，加载器是： sun.misc.Launcher$AppClassLoader@18b4aac2
+X被加载了，加载器是： com.yanqun.parents.MyClassLoaderImpl@74a14482
+
+
+---
+
+X.class:  classpath  系统加载器
+Y.class:  D:	    自定义加载器
+
+java.lang.NoClassDefFoundError: com/yanqun/parents/Y
+
+--
+
+```
+
+
+
+![1571824096839](jvm笔记.assets/1571824096839.png)
+
+如果存在继承关系： 继承的双方（父类、子类）都必须是同一个加载器，否则出错；
+
+如果不存在继承关系： 子类加载器可以访问父类加载器加载的类（自定义加载器，可以访问到 系统加载器加载的Y类）；反之不行（父类加载器 不能访问子类加载器）
+
+核心： 双亲委派
+
+如果都在同一个加载器 ，则不存在加载问题； 如果不是同一个，就需要双亲委派。
+

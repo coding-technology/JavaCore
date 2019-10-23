@@ -6,7 +6,7 @@ class MyClass2{
 public class TestParentsClassLoader {
 
 
-    public static void main(String[] args) throws Exception {
+    public static void main(Math[] args) throws Exception {
        Class myClass1 =  Class.forName("java.lang.Math") ;
         ClassLoader classLoader1 = myClass1.getClassLoader();
         System.out.println(classLoader1);

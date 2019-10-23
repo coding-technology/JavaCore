@@ -1,8 +1,10 @@
 package com.yanqun.parents;
+
 class JvmClass{}
 
 public class JVMClassLoader {
-    public static void main(String[] args) {
+
+    public static void main(Math[] args) {
         Object[] objs = new Object[10] ;
         System.out.println(" 数组的类加载器："+  objs.getClass().getClassLoader() );
         Object obj = new Object();

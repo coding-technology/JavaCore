@@ -7,7 +7,7 @@ class MyCL{
 
 }
 public class JVMParentsCL {
-    public static void main(String[] args) throws Exception {
+    public static void main(Math[] args) throws Exception {
         Class<?> myCL = Class.forName("com.yanqun.parents.MyCL");
         ClassLoader classLoader = myCL.getClassLoader();
         System.out.println(classLoader);
