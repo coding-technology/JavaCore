@@ -294,7 +294,7 @@ public static void main(String[] args) {
 
 - 新生代：存放 1.生命周期比较短的对象  2.小的对象；反之，存放在老生代中。对象的大小，可以通过参数设置 -XX：PretenureSizeThredshold 。一般而言，大对象一般是 集合、数组、字符串。生命周期： -XX:MaxTenuringThredshold
 
-  新生代、老生代中年龄：MinorGC回收新生代中的对象。如果Eden区中的对象在一次回收后仍然存活，就会被转移到 s区中；之后，如果MinorGC再次回收，已经在s区中的对象仍然存活，则年龄+1。如果年龄增长一定的数字，则对象会被转移到 老生代中(默认是16)。简言之：在新生代中的对象，没经过一次MinorGC，有三种可能：1从eden -》s区   2.（已经在s区中）年龄+1  3.转移到老生代中
+  新生代、老生代中年龄：MinorGC回收新生代中的对象。如果Eden区中的对象在一次回收后仍然存活，就会被转移到 s区中；之后，如果MinorGC再次回收，已经在s区中的对象仍然存活，则年龄+1。如果年龄增长一定的数字，则对象会被转移到 老生代中。简言之：在新生代中的对象，每经过一次MinorGC，有三种可能：1从eden -》s区   2.（已经在s区中）年龄+1  3.转移到老生代中
 
    ![1568946567405](jvm笔记.assets/1568946567405.png)
 
@@ -922,7 +922,7 @@ public class MyClassLoader {
 -  JVM自带的加载器
 
   - 根加载器,Bootstrap   : 加载 jre\lib\rt.jar （包含了平时编写代码时 大部分jdk api）；指定加载某一个jar（ -Xbootclasspath=a.jar）
-  - 扩展类加载器，Extension：C:\Java\jdk1.8.0_101\jre\lib\ext /\*.jar ;指定加载某一个jar(-Djava.ext.dirs= ....)
+  - 扩展类加载器，Extension：C:\Java\jdk1.8.0_101\jre\lib\ext\\\*.jar ;指定加载某一个jar(-Djava.ext.dirs= ....)
   - AppClassLoader/SystemClassLoader，系统加载器（应用加载器）：加载classpath；指定加载（-Djava.class.path= 类/jar）
 
 - 用户自定义的加载器
@@ -1634,4 +1634,22 @@ java.lang.NoClassDefFoundError: com/yanqun/parents/Y
 核心： 双亲委派
 
 如果都在同一个加载器 ，则不存在加载问题； 如果不是同一个，就需要双亲委派。
+
+如果想实现各个加载器之间的自定义依赖，可以使用ogsi规范
+
+![1572660850713](jvm笔记.assets/1572660850713.png)
+
+OSGi：
+
+1.网状结构的加载结构
+
+2.屏蔽掉硬件的异构性。例如，可以将项目部署在网络上，可以在A节点上 远程操作B节点。在操作上，可以对硬件无感。也可以在A节点上 对B节点上的项目进行运维、部署，并且立项情况下  在维护的期间，不需要暂时、重启。
+
+
+
+### 类的卸载
+
+1.系统自带（系统加载器、扩展加载器、根加载器）：这些加载器加载的类  是不会被卸载。
+
+2.用户自定义的加载器，会被GC卸载GC
 

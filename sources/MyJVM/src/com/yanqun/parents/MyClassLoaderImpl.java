@@ -25,6 +25,7 @@ public class MyClassLoaderImpl  extends ClassLoader{
 
     //“com/yq/xxx.class” ->  byte[]
     private byte[] loadClassData(String name)  {
+        System.out.println("自定义加载器...");
 //              System.out.println("加载loadClassData...");
         if(path != null){//name: com.yanqun.parents.MyDefineCL
 //                  System.out.println("去D盘加载;;");
