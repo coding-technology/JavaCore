@@ -20,9 +20,8 @@ class MyClass{
 
 
 public class MyClassLoader {
-    public static void main(Math[] args) {
+    public static void main(String[] args) {
         MyClass myc =  MyClass.getMyClass() ;
         System.out.println(myc);
-
     }
 }

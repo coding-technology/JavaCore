@@ -897,7 +897,7 @@ public class MyClassLoader {
 分析
 
 ```java
-   static int num1 = 100 ;     【 0 】-> 【100】->【200】
+    static int num1 = 100 ;     【 0 】-> 【100】->【200】
 
     static MyClass myClass = new MyClass();【null】 ->【引用地址0x112231】
     public MyClass(){
