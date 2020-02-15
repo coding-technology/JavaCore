@@ -386,6 +386,178 @@ public class FileCopyData {
 
 ```
 
+## 装饰模式：IO设计的核心思想
+
+在不影响原有对象的前提下，无侵入的给一个对象增一些额外的功能。
+
+new InputStreamReader( new FileInputStream(new File("d:/abc.txt")) ) ;
+
+
+
+
+
+装饰模式
+
+![1576461139194](IO.assets/1576461139194.png)
+
+装饰者：需要持有主题（被装饰者）的一个引用。
+
+![1576462471474](IO.assets/1576462471474.png)
+
+装饰主题接口
+
+```java
+package decorator;
+
+/*
+ * Created by 颜群
+ */
+public interface Phone {
+    void call();//基础功能
+}
+
+```
+
+装饰主题的基础功能
+
+```java
+package decorator;
+
+/*
+ * Created by 颜群
+ */
+public class ConcretePhone implements  Phone {
+    @Override
+    public void call() {
+        System.out.println("打电话....");
+    }
+}
+
+```
+
+装饰者抽象类
+
+```java
+package decorator;
+
+/*
+ * Created by 颜群
+ */
+public abstract class SmartPhone  implements  Phone{
+   private  Phone phone  ;//装饰者 持有 主题的一个引用
+
+   public SmartPhone(){
+   }
+
+   public SmartPhone(Phone phone){
+      this.phone = phone ;
+   }
+
+   //装饰者 包含 原主题已有的功能
+   @Override
+   public void call() {
+      phone.call();
+   }
+}
+
+```
+
+具体装饰者1
+
+```java
+package decorator;
+
+/*
+ * Created by 颜群
+ */
+public class ConcreteSmarPhone1  extends  SmartPhone{
+    public ConcreteSmarPhone1(Phone phone){
+        super(phone) ;
+    }
+
+    public void call(){
+        super.call();
+        //额外的新功能
+        changeColor();
+    }
+
+    public void changeColor(){
+        System.out.println("智能变色...");
+    }
+
+
+
+}
+
+```
+
+具体装饰者2
+
+```java
+package decorator;
+
+/*
+ * Created by 颜群
+ */
+public class ConcreteSmarPhone2 extends  SmartPhone{
+    public ConcreteSmarPhone2(Phone phone){
+        super(phone) ;
+    }
+
+    public void call(){
+        super.call();
+        //额外的新功能
+        changeSize();
+    }
+
+    public void changeSize(){
+        System.out.println("智能改变尺寸...");
+    }
+
+
+
+}
+
+```
+
+测试类
+
+```java
+package decorator;
+
+/*
+ * Created by 颜群
+ */
+public class Test {
+    public static void main(String[] args) {
+        ConcretePhone phone = new ConcretePhone();
+        //主题（被装饰者）
+        phone.call();
+        System.out.println("---");
+
+ConcreteSmarPhone1 phone1 = new ConcreteSmarPhone1( phone ) ;
+        phone1.call();
+
+
+        System.out.println("---");
+
+        ConcreteSmarPhone2 phone2 = new ConcreteSmarPhone2( phone ) ;
+        phone2.call();
+
+
+        System.out.println("-------");
+
+       SmartPhone smart =  new ConcreteSmarPhone2(new ConcreteSmarPhone1( phone )) ;
+        smart.call();
+    }
+}
+
+```
+
+
+
+
+
 
 
 

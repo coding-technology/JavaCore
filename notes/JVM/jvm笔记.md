@@ -612,7 +612,7 @@ public class SoftReferenceDemo {
         //开启一个线程，监听 是否有软引用已经被回收
         new Thread(  ()->{
         while(true) {
-            if (softRef.get() == null) ;//软引用对象
+            if (softRef.get() == null) //软引用对象
             {
                 System.out.println("软引用对象已被回收..");
                 System.exit(0);

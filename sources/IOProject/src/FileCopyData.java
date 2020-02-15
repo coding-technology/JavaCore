@@ -4,6 +4,7 @@ public class FileCopyData {
     //abc.txt->内存->xyz.txt
     public static void main(String[] args) {
         InputStream in = null ;
+
         OutputStream out = null ;
         InputStream dataInput = null ;
         OutputStream dataOutput = null ;
