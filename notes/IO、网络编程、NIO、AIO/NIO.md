@@ -611,11 +611,256 @@ NIO如何解决以上 上下文切换、开辟线程内存问题？ 通过选择
 
 
 
+服务端
+
+```java
+package chat;
+
+import com.sun.org.apache.bcel.internal.generic.Select;
+
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.nio.ByteBuffer;
+import java.nio.channels.*;
+import java.nio.charset.Charset;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+/*
+ * Created by 颜群
+ */
+public class ChatServer {
+    private static Map<String,SocketChannel> clientsMap = new HashMap();
+    public static void main(String[] args) throws  Exception {
+
+       int[] ports =  new int[]{7777,8888,9999} ;
+       //创建一个选择器
+        Selector selector = Selector.open();
+
+        for(int port:ports){
+           ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+           serverSocketChannel.configureBlocking(false) ;//通道的阻塞模式
+           ServerSocket serverSocket = serverSocketChannel.socket();
+           serverSocket.bind(  new InetSocketAddress(port));
+            // 标识selector感兴趣的事件：接收客户端连接
+           serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT ) ;
+       }
+
+        while(true ){
+            selector.select() ;//一直阻塞，直到选择器上有就绪的事件
+            //selectedKeys(): 获取 通道 和选择器之间的事件。 获取 选择器 对通道的哪些事件感兴趣。
+            Set<SelectionKey> keys = selector.selectedKeys();
+            Iterator<SelectionKey> iterator = keys.iterator();
+
+            while(iterator.hasNext()){//获取所有的事件
+               SocketChannel clientChannel ;//客户端和服务端交互的通道
+                SelectionKey selectedKey = iterator.next();//selectedKey:选择器和通道之间的 每一个感兴趣的事件
+                if(selectedKey.isAcceptable()) {  //连接准备就绪
+                    ServerSocketChannel   channel = (ServerSocketChannel)selectedKey.channel();
+                    clientChannel = channel.accept() ;//连接就绪 的channel
+                    clientChannel.configureBlocking(false) ;
+
+                    //增加感兴趣的事件：读事件
+                    clientChannel.register(selector, SelectionKey.OP_READ   ) ;
+                    //给每个用于设置一个 唯一标志符  key(String) -value(SocketChannel)
+                    //唯一标志符：是一个 key+四位随机数
+                    String key = "key" + (int)(Math.random()*9000 +1000 ) ;
+                    clientsMap.put(key, clientChannel ) ;
+                }else if(selectedKey .isReadable() ){//读就绪
+                    clientChannel =  (SocketChannel) selectedKey.channel() ;
+                    ByteBuffer readBuffer = ByteBuffer.allocate(1024);
+                    int result =-1 ;
+                    String receive = null ;
+                    try {
+                        result = clientChannel.read(readBuffer);//将客户端发来的数据 存储到readBuffer中
+                    }catch (IOException e){//正在读的时候，如果用户退出（断开连接）
+                        //谁退出了？key  ,找到 退出的key   map(key, clientChannel )
+                        String clientKey = getClientKey(clientChannel  )  ;
+                        System.out.println("客户端："+clientKey+"退出聊天室");
+                        clientsMap.remove(clientKey) ;
+                        clientChannel.close();
+                        selectedKey.cancel();
+                        continue ;
+                    }
+
+                    if(result >0 ){
+                        readBuffer.flip() ;
+                        Charset charset = Charset.forName("utf-8") ;
+                        receive =  String.valueOf(  charset.decode(readBuffer ).array()   ) ;
+                        System.out.println(  clientChannel +":"+ receive);
+
+                        if("connecting".equals(receive)){
+                            receive = "新客户端上线" ;
+                        }
+
+                        //将本次 读通道中的数据，加入到其他通道中
+                        selectedKey.attach(receive) ;
+
+                        //感兴趣的事件：写事件
+                        selectedKey.interestOps(  SelectionKey.OP_WRITE   )   ;
+                    }
+                //...
+                }else if(selectedKey.isWritable()) {//写数据
+
+                    clientChannel =   (SocketChannel) selectedKey.channel();
+                    /*将接收到的消息 广播出去。  例如，张三在聊天室发了一句“hello"，服务端 需要将这个
+                    "hello"再广播 所有的聊天室用户  。形式：    张三(key)： hello(SocketChannel)
+                    */
+                    String key = getClientKey( clientChannel ) ;
+                    //广播发送给全部的聊天室用户
+                    for(  Map.Entry<String,SocketChannel> entry: clientsMap.entrySet()){
+                        SocketChannel eachClient = entry.getValue();//每个用户
+                        ByteBuffer broadCastBuffer = ByteBuffer.allocate(1024) ;
+                        broadCastBuffer.put((key+":"  + selectedKey.attachment() ).getBytes() ) ;
+                        broadCastBuffer.flip() ;
+                        eachClient.write( broadCastBuffer ) ;
+                    }
+
+                    selectedKey.interestOps(SelectionKey.OP_READ);
+
+                }else{
+                    System.out.println("other...");
+                }
+            }
+            keys.clear();
+        }
+    }
+
+
+    public static String getClientKey(SocketChannel  clientChannel  ){
+        String key = null ;
+        //n个人，n个clientChannel
+        /*
+                key1  :n个clientChannel-1
+                key2  :n个clientChannel-2
+                key13  :n个clientChannel-3
+         */
+        Set<Map.Entry<String, SocketChannel>> entries = clientsMap.entrySet();
+        for( Map.Entry<String,SocketChannel> entry:entries){
+            if(entry.getValue() ==clientChannel ){
+                key = entry.getKey() ;
+                break ;
+            }
+        }
+        return key;
+    }
+}
+
+```
+
+客户端
+
+```java
+package chat;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.SocketChannel;
+import java.util.Iterator;
+import java.util.Set;
+
+/*
+ * Created by 颜群
+ */
+public class ChatClient {
+    public static void main(String[] args) {
+        try {
+            SocketChannel socketChannel = SocketChannel.open();
+            socketChannel.configureBlocking(false) ;
+            Selector selector = Selector.open();
+            //注册“连接事件”
+            socketChannel.register(  selector  , SelectionKey.OP_CONNECT) ;
+
+            int[] ports = {7777,8888,9999} ;
+            int port = ports[ (int)(Math.random()*3) ] ;
+            socketChannel.connect(new InetSocketAddress("127.0.0.1",port)) ;
+
+            while(true){
+                selector.select() ;
+                //selectionKeys：包含了所有的事件
+                Set<SelectionKey> selectionKeys = selector.selectedKeys();
+
+                Iterator<SelectionKey> keyIterator = selectionKeys.iterator();
+                while(keyIterator.hasNext()  ){
+
+                    SelectionKey selectionKey = keyIterator.next();//每个事件
+                    //真实的发生“连接事件”
+                    if(selectionKey.isConnectable()){ //连接完毕？接收（读）、发送（写）
+                        //buffer  + channel
+                        ByteBuffer sendBuffer = ByteBuffer.allocate(1024);
+                        SocketChannel clientChannel =  (SocketChannel)selectionKey.channel();
+
+
+                        if(clientChannel.isConnectionPending()){//正在连接
+
+                            if(clientChannel.finishConnect()){
+                                System.out.println("连接服务端成功,连接的端口是："+port);
+                                //向服务端 发送一条测试数据
+                                sendBuffer.put("connecting".getBytes()) ;
+                                sendBuffer.flip() ;
+                                clientChannel.write(sendBuffer) ;
+
+                            }
+                        }
+                        //在客户端看来，“写操作”不需要注册到通道中，再去使用?
+
+                        //客户端，每次写操作，创建一个线程
+                        new Thread( ()->{
+                            try {
+                                sendBuffer.clear();
+                                //写数据： 接收用户从控制台输入的内容
+                                InputStreamReader reader = new InputStreamReader(System.in);
+                                BufferedReader bReader = new BufferedReader(reader);
+                                String message = bReader.readLine();
+
+                                sendBuffer.put(message.getBytes()) ;
+                                sendBuffer.flip() ;
+                                clientChannel.write( sendBuffer) ;
+
+                                //发送数据
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }
+
+                        }    ) .start();
+
+
+                        //发送数据（写）
+                        clientChannel.register(  selector,SelectionKey.OP_READ) ;
+                    }else if(selectionKey.isReadable()  ){//读
+                        ByteBuffer readBuffer = ByteBuffer.allocate(1024);
+                        SocketChannel clientChannel =  (SocketChannel)selectionKey.channel();
+                        int len = clientChannel.read(readBuffer);//读
+                        if(len>0){
+                            String receive = new String(readBuffer.array(), 0, len);
+                            System.out.println(receive);
+                        }
+                    }
+                }
+
+                selectionKeys.clear();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}
+
+```
+
+![1581753598993](NIO.assets/1581753598993.png)
 
 
 
-
-
+![1581753607757](NIO.assets/1581753607757.png)
 
 
 
