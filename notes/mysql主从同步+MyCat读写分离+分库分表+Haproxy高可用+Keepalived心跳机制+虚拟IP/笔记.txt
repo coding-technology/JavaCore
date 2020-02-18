@@ -1,0 +1,361 @@
+mysql处理海量数据
+主从同步：会带来数据冗余
+	1.“从”节点可以作为 备份节点
+	2. 主从同步  可以实现读写分离（mycat）
+
+mysql中解决并发问题：读写分离
+	1.一般项目中， 读>>写
+	100002=10000读+2次
+
+实现读写分离？中间件 mycat
+ mycat	
+	1: 读写分离
+	2：分表分库
+
+haproxy:搭建多个mycat集群
+
+
+集群：防止单点故障
+
+
+去中心化：
+	1.多个节点之间彼此发送 心跳 （感知对方是否还存活）
+	2.维护一个 VIP（虚拟ip）
+
+6=1windows +5centos7 
+
+准备5centos：
+（为了学习方便，先全部使用超级管理员root）
+	配置一个，克隆出其他的
+	克隆完毕后 需要处理：
+	1.内存
+	2.ip
+	vi /etc/sysconfig/network-scripts/ifcfg-ens33
+	删除网卡中的唯一标志符
+	3.hostname
+	hostnamectl set-hostname bigdata05
+	4.bigdata01/02/03/04修改映射
+
+	centos: 	 vi /etc/hosts
+	windows:	C:\Windows\System32\drivers\etc
+	增加6个计算机全部的映射
+	5.刷新网络
+	systemctl restart network
+	6.ssh
+	生成秘钥	ssh-keygen -t rsa
+	私钥发给自己  ssh-copy-id localhost
+	公钥发给别人 ssh-copy-id 别人的ip
+
+
+
+一、主从同步
+windows - bigdata01
+
+	windows主	
+	bigdata01：从
+		centos7关闭防火墙：
+			systemctl stop firewalld
+			systemctl disable firewalld
+为了学习方便，在学习时，临时把防火墙关闭 （开放端口）
+	处理mysql权限：开放(windows/centos)远程访问MySql的权限：
+登录Mysql管理员账户：
+grant all privileges on *.* to 'root'@'192.168.2.%' identified by 'root' with grant option ;
+flush privileges;
+本地的mysql可以被： 192.168.2.% ，root/root 访问
+
+
+配置master(windows)
+my.ini
+[mysqld]
+#master的id
+server-id=1
+#binary log
+log-bin="C:/Program Files/MySQL/data/mysql-bin"
+#异常信息的日志
+log-error="C:/Program Files/MySQL/data/mysql-error"
+# The TCP/IP Port the MySQL Server will listen on
+port=3306
+
+#Path to installation directory. All paths are usually resolved relative to this.
+#MySQL根路径
+basedir="C:/Program Files/MySQL/MySQL Server 5.5/"
+#指定需要同步哪些数据库（默认全部数据库）
+#binlog-do-bo=mydb01
+
+#指定需要 不同步哪些数据库（排除）
+binlog-ignore-db=mysql
+
+
+#Path to the database root
+datadir="C:/ProgramData/MySQL/MySQL Server 5.5/Data/"
+
+
+配置slave(centos)
+/etc/my.cnf
+[mysqld]
+server-id=2
+log-bin=mysql-bin
+replicate-do-db=mydb01
+replicate-do-db=mydb02
+
+windwos/centos需要在配置完毕后 重启
+
+
+
+设置主从关系 ：
+	slave ->master
+	显示master的位置
+	通过以下命令查看master的信息：
+	（windows）show master status;
+File: mysql-bin.000001
+Position:107
+
+	salve：指定master (slave指定master作为自己的老大)
+	（bigdata01,mysql命令）
+change master to 
+master_host='192.168.2.2',
+master_user='root',
+master_password='root',
+master_port=3306,
+master_log_file='mysql-bin.000001',
+master_log_pos=107;
+
+	
+
+验证主从同步：
+准备数据：
+create database mydb02;
+create database mydb01;
+
+	开启slave （bigdata01,mysql命令）:
+	start slave ;
+
+	验证主从是否成功执行：
+	show slave status  \G，必须保证以下两个为yes：
+             Slave_IO_Running: 
+            Slave_SQL_Running: 
+
+如果有问题，查看日志：Last_IO_Errno/Last_SQL_Errno 
+	本次提示：master和slave有相同的server-id 
+
+当前主 windows:  5.5.62
+	centos7: 5.5.58
+
+通过命令行 指定：
+server-id=2 （永久设置）
+临时设置： bigdata01(slave) :  set global server_id=2;
+再次尝试：
+	stop slave ;
+	start slave;
+
+尝试在master中mydb01/mydb02中创建表、插入数据，然后测试slave中是否有相应的表和数据。
+
+如果遇到以下错误：出错的原因：之前已经搭建/启动主从
+	1.ERROR 1201 :could not initlze master info structure ...
+		数据库之前已经设置过了主从同步
+	解决：关闭并重置slave（在slave中sql命令中）
+		slave stop 
+		reset slave ;
+		change master to  ....（检查最新的 File、Position）
+
+	2.ERROR 1198 :..... RUN STOP SLAVE ..
+		数据库之前已经设置过了主从同步，并且也已经开启了主从同步
+		stop slave ;
+		change master to  ....（检查最新的 File、Position）
+
+
+启动Mysql:
+/etc/init.d/mysql start
+chkconfig mysql on 
+
+---
+mycat:
+	分库分表： 
+		mycat研究对象：水平拆分:订单数据( 订单数据1  \订单数据2 \订单数据3)
+		了解：（微服务）垂直拆分：系统 （订单数据库、  用户数据库）
+
+	读写分离：读-》服务器节点（数据库）
+		 写-》服务器节点（数据库）
+
+
+
+安装mycat：
+	上传、解压缩
+	配置（/usr/local/mycat/conf）
+	1.server.xml（配置访问Mycat的用户，schemas代表逻辑库）
+	<user name="root" defaultAccount="true">
+		<property name="password">root</property>
+		<!-- 逻辑库-->
+		<property name="schemas">mydb</property>
+	</user>
+
+
+
+	2.schema.xml（读写分离、分库分表）
+
+读写分离的写：主从同步的Master
+读写分离的读：主从同步的Slave
+dataHost 
+	balance:读请求的负载均衡
+		0 ：不开启读写分离，所有的读操作 都发送到writehost中
+		1：全部的readhost和stand by writehost都参与 读操作的负责均衡
+		2：读请求 随机发送给readhost、writehost
+		3：读请求随机发送给writehost中的readhost  （writehost不参与读请求） --推荐
+		
+	writeType:写请求的负载均衡
+		0：写请求先发送给schema.xml中的第一个writehost。当第一个writehost挂掉，再自动切换到writehost中 。切换的记录 会被记录在 conf/dnindex.properties  --推荐
+		1：写请求随机发送到所有的wirtehost中
+
+
+	switchType: 是否允许 “读操作”在readhost和writehost上自动切换（解决延迟问题：当从readhost中读取数据中 出现网络延迟等问题时，自动从writehost中读数据）
+	-1：不许
+	1：默认，允许
+	2：根据“主从同步的状态” 自动选择是否 切换。
+		主从之间 会持续发送心跳。 当心跳检测机制发送了IO延迟，则readhost自动切换到writehost；
+		否则不切换。 必须将心跳设置 show slave status    --推荐
+	
+
+	---rule.xml：分库分表的拆分规则(平均拆分)
+		mydb->mydb01+mydb02
+
+
+准备数据：
+	确保bigdata、bigdata01中都存在mydb01和mydb02
+	表：student
+create table student(id int(4) ,name varchar(10) ) ;
+
+验证读写分离：
+	写：bigdata(master)
+验证逻辑：
+		向mycat中插入数据 -> 是否会 自动写入  writehost（bigdata）			
+
+具体步骤：
+	开启mycat
+	bin/mycat start
+	查看状态
+	bin/mycat status
+	
+	登录mycat
+		提示：
+		不能直接在mycat所在节点 登录：mysql -uroot -proot -P8066
+		需要借助一个 已经安装了mysql软件的 计算机上 远程操作mysql:
+		在windows上远程连接 bigdata02上的 Mycat :mysql  -uroot -proot -h192.168.2.129 -P8066
+		(mydb)
+	向mycat中插入数据
+	验证：从bigdata(master)中查看数据是否写入	
+
+
+
+	读：bigdata01(slave)
+	
+
+常见bug：
+	如果无法正常实现mycat功能，调试：
+	日志：
+		mycat/logs ：
+			mycat.log：执行出错
+			wrapper.log：启动错误
+
+	Invalid DataSource:0  ，常见解决方案：防火墙、IP、端口，权限问题：临时开放全部的权限
+		
+	
+
+
+
+操作Mycat:  和sql 92基本一致  ; 操作端口8066 ；使用mycat的方法 和mysql基本一致
+				管理端口9066
+	SQL92：语法严格的SQL
+		insert into student(id,name) values(1,zs) ;
+	sql99：语法较为宽松
+		insert into student values(1,zs) ;
+
+
+---
+在bigta03上再次搭建mycat，和bigdat02组成mycat集群
+启动bigdata02/03上的mycat
+
+
+--
+在bigdata04搭建haproxy，用于整合2个mycat
+在线安装haproxy:
+	查看可用的haproxy版本：yum list | grep haproxy
+
+	haproxy.x86_64
+	在线安装：
+		yum -y install haproxy.x86_64
+	设置： 用户名是haproxy
+	chown -R haproxy:haproxy /etc/haproxy/
+
+配置文件（1.日志）
+	vi /etc/rsyslog.conf
+	将以下2个指令的注释释放：
+	$ModLoad imudp
+	$UDPServerRun 514
+	设置日志文件的路径：
+	local2.*  日志的保存文件
+重启日志服务:
+	systemctl restart rsyslog.service
+
+配置文件（2.haproxy）	
+	yum安装后的配置文件默认etc
+vi /etc/haproxy/haproxy.cfg (里面的日志文件名 和刚才配置的保持一致)
+
+启动并使用haproxy：
+启动
+	systemctl start haproxy.service
+	systemctl stop haproxy.service
+	systemctl status haproxy.service
+
+	
+
+访问web界面的地址： /haproxy      admin/admin
+
+
+ cannot bind socket  ：网络 
+
+权限 setenforce 0  
+
+以上配置完毕，再用同样的方法  增加另一个haproxy (bigdata05 )
+
+
+
+---
+keepalived
+安装
+yum list | grep keepalived
+yum -y install  keepalived.x86_64
+配置
+	文件/etc/keepalived/keepalived.conf
+	/etc/check_haproxy.sh
+
+
+用同样的办法，在bigdata05上配置第二个keepalived。 在bigdata05修改以下：
+
+router_id :NodeB
+priority :90
+使用keepalived：
+	启动
+	systemctl start keepalived.service
+	systemctl restart keepalived.service
+	systemctl enable keepalived.service
+
+systemctl stop keepalived.service
+systemctl status keepalived.service
+
+分别在配置了keepalived的计算机上（bigdata04和bigdata05) 通过ip a查看ip情况
+
+
+
+试验：
+访问mycat:
+
+windows:
+	mysql -uroot -proot -h192.168.2.222  -P8066
+
+192.168.2.222 ->VIP (keepalived) -> haproxy  ->MyCat1/MyCat2 ->MySQL主从..
+
+
+时间同步指令：
+	yum -y install npt ntpdate
+	ntpdate cn.pool.ntp.org
+	hwclock --systoch

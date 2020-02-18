@@ -755,7 +755,7 @@ public class ChatServer {
 客户端
 
 ```java
-package chat;
+package manybuffers;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -774,72 +774,72 @@ public class ChatClient {
     public static void main(String[] args) {
         try {
             SocketChannel socketChannel = SocketChannel.open();
-            socketChannel.configureBlocking(false) ;
+            socketChannel.configureBlocking(false);
             Selector selector = Selector.open();
             //注册“连接事件”
-            socketChannel.register(  selector  , SelectionKey.OP_CONNECT) ;
+            socketChannel.register(selector, SelectionKey.OP_CONNECT);
 
-            int[] ports = {7777,8888,9999} ;
-            int port = ports[ (int)(Math.random()*3) ] ;
-            socketChannel.connect(new InetSocketAddress("127.0.0.1",port)) ;
+            int[] ports = {7777, 8888, 9999};
+            int port = ports[(int) (Math.random() * 3)];
+            socketChannel.connect(new InetSocketAddress("127.0.0.1", port));
 
-            while(true){
-                selector.select() ;
+            while (true) {
+                selector.select();
                 //selectionKeys：包含了所有的事件
                 Set<SelectionKey> selectionKeys = selector.selectedKeys();
 
                 Iterator<SelectionKey> keyIterator = selectionKeys.iterator();
-                while(keyIterator.hasNext()  ){
+                while (keyIterator.hasNext()) {
 
                     SelectionKey selectionKey = keyIterator.next();//每个事件
                     //真实的发生“连接事件”
-                    if(selectionKey.isConnectable()){ //连接完毕？接收（读）、发送（写）
+                    if (selectionKey.isConnectable()) { //连接完毕？接收（读）、发送（写）
                         //buffer  + channel
                         ByteBuffer sendBuffer = ByteBuffer.allocate(1024);
-                        SocketChannel clientChannel =  (SocketChannel)selectionKey.channel();
+                        SocketChannel clientChannel = (SocketChannel) selectionKey.channel();
 
 
-                        if(clientChannel.isConnectionPending()){//正在连接
+                        if (clientChannel.isConnectionPending()) {//正在连接
 
-                            if(clientChannel.finishConnect()){
-                                System.out.println("连接服务端成功,连接的端口是："+port);
+                            if (clientChannel.finishConnect()) {
+                                System.out.println("连接服务端成功,连接的端口是：" + port);
                                 //向服务端 发送一条测试数据
-                                sendBuffer.put("connecting".getBytes()) ;
-                                sendBuffer.flip() ;
-                                clientChannel.write(sendBuffer) ;
-
+                                sendBuffer.put("connecting".getBytes());
+                                sendBuffer.flip();
+                                clientChannel.write(sendBuffer);
                             }
                         }
                         //在客户端看来，“写操作”不需要注册到通道中，再去使用?
 
                         //客户端，每次写操作，创建一个线程
-                        new Thread( ()->{
-                            try {
-                                sendBuffer.clear();
-                                //写数据： 接收用户从控制台输入的内容
-                                InputStreamReader reader = new InputStreamReader(System.in);
-                                BufferedReader bReader = new BufferedReader(reader);
-                                String message = bReader.readLine();
+                        new Thread(() -> {
+                            while (true) {
+                                try {
+                                    sendBuffer.clear();
+                                    //写数据： 接收用户从控制台输入的内容
+                                    InputStreamReader reader = new InputStreamReader(System.in);
+                                    BufferedReader bReader = new BufferedReader(reader);
+                                    String message = bReader.readLine();
 
-                                sendBuffer.put(message.getBytes()) ;
-                                sendBuffer.flip() ;
-                                clientChannel.write( sendBuffer) ;
+                                    sendBuffer.put(message.getBytes());
+                                    sendBuffer.flip();
+                                    clientChannel.write(sendBuffer);
 
-                                //发送数据
-                            }catch (Exception e){
-                                e.printStackTrace();
+                                    //发送数据
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                             }
-
-                        }    ) .start();
+                        }).start();
 
 
                         //发送数据（写）
-                        clientChannel.register(  selector,SelectionKey.OP_READ) ;
-                    }else if(selectionKey.isReadable()  ){//读
+                        clientChannel.register(selector, SelectionKey.OP_READ);
+                    } else if (selectionKey.isReadable()) {//读
                         ByteBuffer readBuffer = ByteBuffer.allocate(1024);
-                        SocketChannel clientChannel =  (SocketChannel)selectionKey.channel();
+                        SocketChannel clientChannel = (SocketChannel) selectionKey.channel();
                         int len = clientChannel.read(readBuffer);//读
-                        if(len>0){
+                        if (len > 0) {
                             String receive = new String(readBuffer.array(), 0, len);
                             System.out.println(receive);
                         }
@@ -848,7 +848,7 @@ public class ChatClient {
 
                 selectionKeys.clear();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -866,7 +866,66 @@ public class ChatClient {
 
 
 
+### 用同一个channel读取多个缓冲区
+
+注意：如果有2个缓冲区a\b； 先把a读满，再去读取b
+
+![1582010264341](NIO.assets/1582010264341.png)
+
+```java
+package manybuffers;
+
+import java.net.InetSocketAddress;
+import java.net.ServerSocket;
+import java.nio.ByteBuffer;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
+
+/*
+ * Created by 颜群
+ */
+public class NIOServer {
+    public static void main(String[] args) throws  Exception{
+        ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+        ServerSocket serverSocket = serverSocketChannel.socket();
+        serverSocket.bind( new InetSocketAddress(8888)) ;
+        //定义两个缓冲区，接受客户端的数据
+        ByteBuffer[] buffers = new ByteBuffer[2] ;
+        buffers[0] = ByteBuffer.allocate(4) ;
+        buffers[1] = ByteBuffer.allocate(8) ;
+        int bufferSize = 4 + 8 ;//总容量
+
+        SocketChannel socketChannel = serverSocketChannel.accept();
+        System.out.println("服务端：接收到客户端连接。。。");
+        while(true){//接收数据
+            int totalRead = 0 ;//每一次实际使用
+            //如果buffer没满，继续读
+            while(totalRead < bufferSize){
+                long read = socketChannel.read(buffers);
+                totalRead += read ;
+                System.out.println("【每一次】，实际读取到的数据大小："+read);
+//                System.out.println("实际读取到的【总数据】大小："+totalRead);
+            }
+            //如果buffer已满， flip() ;
+            for(ByteBuffer buffer:buffers){
+                buffer.flip() ;
+            }
+        }
+
+    }
+}
+
+```
+
+客户端沿用之前的client
+
+buffer1： 4
+buffer2:	8
+服务端buffers：共12
 
 
+客户端发送： 10 ，11(2+9) +   4(3xxxx+1)	
 
+![1582011476690](NIO.assets/1582011476690.png)
 
+![1582011490116](NIO.assets/1582011490116.png)

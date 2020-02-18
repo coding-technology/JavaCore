@@ -50,7 +50,6 @@ public class ChatClient {
                                 sendBuffer.put("connecting".getBytes()) ;
                                 sendBuffer.flip() ;
                                 clientChannel.write(sendBuffer) ;
-
                             }
                         }
                         //在客户端看来，“写操作”不需要注册到通道中，再去使用?

@@ -1,0 +1,18 @@
+开放mysql的一切权限(root)
+
+mycat-> a ,b ,在a,b计算机中的Mysql中通过以下执行 开放权限(root)
+
+mycat-> bigdata/bigdata01 
+use mysql ;
+update user set
+`Select_priv` = 'Y', `Insert_priv` = 'Y',`Update_priv` = 'Y',`Delete_priv` = 'Y',
+`Create_priv` = 'Y',`Drop_priv` = 'Y',`Reload_priv` = 'Y',`Shutdown_priv` = 'Y',
+`Process_priv` = 'Y',`File_priv` = 'Y',`Grant_priv` = 'Y',`References_priv` = 'Y',
+`Index_priv` = 'Y',`Alter_priv` = 'Y',`Show_db_priv` = 'Y',`Super_priv` = 'Y',
+`Create_tmp_table_priv` = 'Y',`Lock_tables_priv` = 'Y',`Execute_priv` = 'Y',
+`Repl_slave_priv` = 'Y',`Repl_client_priv` = 'Y',`Create_view_priv` = 'Y',
+`Show_view_priv` = 'Y',`Create_routine_priv` = 'Y',`Alter_routine_priv` = 'Y',
+`Create_user_priv` = 'Y',`Event_priv` = 'Y',`Trigger_priv` = 'Y',`Create_tablespace_priv` = 'Y'
+where user="root" ;
+
+flush privileges;

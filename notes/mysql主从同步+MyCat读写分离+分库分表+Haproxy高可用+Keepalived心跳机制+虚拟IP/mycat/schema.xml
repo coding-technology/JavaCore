@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://io.mycat/">
+	<schema name="mydb" checkSQLschema="false" sqlMaxLimit="100">
+		<!--name：分表
+			dataNode：拆分后的数据切片的位置  dn1,dn2
+			rule:拆分规则myrule (拆分的规则叫 myrule)
+		-->
+		<table name="student" dataNode="dn1,dn2" rule="myrule" />
+
+	</schema>
+
+
+	<dataNode name="dn1" dataHost="localhost1" database="mydb01" />
+	<dataNode name="dn2" dataHost="localhost1" database="mydb02" />
+
+	<!--  dataHost：设置读写分离的主机地址-->
+	<dataHost name="localhost1" maxCon="1000" minCon="10" balance="3"
+			  writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+	
+		<writeHost host="hostM1" url="192.168.2.2:3306" user="root"
+				   password="root">
+			<readHost host="hostS2" url="192.168.2.128:3306" user="root" password="root" />
+		</writeHost>
+
+	</dataHost>
+
+</mycat:schema>
