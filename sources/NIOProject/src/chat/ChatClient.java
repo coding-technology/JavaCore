@@ -56,6 +56,7 @@ public class ChatClient {
 
                         //客户端，每次写操作，创建一个线程
                         new Thread( ()->{
+                            while (true) {
                             try {
                                 sendBuffer.clear();
                                 //写数据： 接收用户从控制台输入的内容
@@ -72,7 +73,7 @@ public class ChatClient {
                                 e.printStackTrace();
                             }
 
-                        }    ) .start();
+                        }    }) .start();
 
 
                         //发送数据（写）
