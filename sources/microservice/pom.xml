@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.yanqun</groupId>
+    <artifactId>microservice</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>micro_common</module>
+        <module>micro_city</module>
+        <module>micro_city2</module>
+        <module>micro_city3</module>
+        <module>micro_city4</module>
+    </modules>
+
+    <properties>
+                <project.build.sourceEnding>UTF-8</project.build.sourceEnding>
+                <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+                <maven.compile.encoding>UTF-8</maven.compile.encoding>
+    </properties>
+
+
+        <!-- 如果要使用 spring boot/spring cloud提供的版本仲裁中心。必须，将 依赖写入父工程的 <parent>或 <dependencyManagement>
+        否则，无法使用spring boot/spring cloud提供的 版本仲裁功能
+        -->
+     <dependencyManagement>
+         <dependencies>
+             <dependency>
+                 <!-- 引入spring boot starter-->
+                 <groupId>org.springframework.boot</groupId>
+                 <artifactId>spring-boot-starter-parent</artifactId>
+                 <version>2.1.3.RELEASE</version>
+                 <type>pom</type>
+                 <scope>import</scope>
+             </dependency>
+
+             <!-- 引入spring cloud-->
+             <dependency>
+                 <groupId>org.springframework.cloud</groupId>
+                 <artifactId>spring-cloud-dependencies</artifactId>
+                 <version>Greenwich.RELEASE</version>
+                 <type>pom</type>
+                 <scope>import</scope>
+             </dependency>
+
+         </dependencies>
+     </dependencyManagement>
+
+    <!--spring mvc 等依赖 不存在“版本仲裁功能”，因此无需写到dependencyManagement、或parent中-->
+
+    <dependencies>
+        <dependency>
+            <!-- 引入spring mvc-->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <!--配置Maven编译插件，及依赖的Jdk版本-->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
