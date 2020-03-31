@@ -11,6 +11,11 @@ public class Message {
     public Message() {
     }
 
+    public Message(boolean flag, Integer code) {
+        this.flag = flag;
+        this.code = code;
+    }
+
     public Message(boolean flag, Integer code, Object data) {
         this.flag = flag;
         this.code = code;

@@ -11,22 +11,31 @@
     <ignored path="$PROJECT_DIR$/micro_city2/target/" />
     <ignored path="$PROJECT_DIR$/micro_city3/target/" />
     <ignored path="$PROJECT_DIR$/micro_city4/target/" />
+    <ignored path="$PROJECT_DIR$/micro_person/target/" />
+    <ignored path="$PROJECT_DIR$/XXX/target/" />
+    <ignored path="$PROJECT_DIR$/micro_people/target/" />
+    <ignored path="$PROJECT_DIR$/projct_httpclient/target/" />
+    <ignored path="$PROJECT_DIR$/micro_httpclient/target/" />
+    <ignored path="$PROJECT_DIR$/project_jsoup/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/micro_city4/src/main/java/micro_city4/MyConfiguration.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project_jsoup/src/main/java/com/yanquan/JsoupDemo02.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="138">
+              <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,28 +44,53 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/micro_city4/src/main/java/micro_city4/MicroCityApplication.java">
+        <entry file="file://$PROJECT_DIR$/micro_city3/src/main/java/micro_city3/dao/CityDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="7" column="22" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="22" />
+            <state relative-caret-position="165">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/micro_city3/src/main/java/micro_city4/MicroCityApplication.java">
+        <entry file="file://$PROJECT_DIR$/micro_city4/src/main/java/micro_city3/dao/CityDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+            <state relative-caret-position="165">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/micro_city4/src/test/java/MiCro_CIty3_Test.java">
+        <entry file="file://$PROJECT_DIR$/micro_people/src/main/java/com/yanqun/dao/AddressDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="16" column="29" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="29" />
+            <state relative-caret-position="-119">
+              <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/micro_people/src/main/java/com/yanqun/dao/PeopleDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-962">
+              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+                <element signature="e#0#36#0" expanded="true" />
+                <element signature="e#0#41#1" expanded="true" />
+                <element signature="e#0#38#1" expanded="true" />
+                <element signature="e#0#73#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.jar!/org/jsoup/Jsoup.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="560">
+              <caret line="63" column="59" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -66,6 +100,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -75,43 +110,66 @@
       <find>select</find>
       <find>queryCities</find>
       <find>cityService</find>
+      <find>par</find>
+      <find>findByNameOrderByAgeDesc</find>
+      <find>sec</find>
+      <find>*</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/micro_common/pom.xml" />
-        <option value="$PROJECT_DIR$/abc/pom.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/micro_city/src/main/java/com/yanqun/micro_city/entity/City.java" />
-        <option value="$PROJECT_DIR$/micro_city/src/main/java/com/yanqun/micro_city/MicroCityApplication.java" />
-        <option value="$PROJECT_DIR$/micro_city/pom.xml" />
-        <option value="$PROJECT_DIR$/micro_city/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/micro_city/src/main/java/com/yanqun/micro_city/service/CityService.java" />
-        <option value="$PROJECT_DIR$/micro_city/src/main/java/com/yanqun/micro_city/mapper/CityMapper.java" />
-        <option value="$PROJECT_DIR$/micro_common/src/main/java/com/yanqun/entity/Message.java" />
-        <option value="$PROJECT_DIR$/micro_common/src/main/java/com/yanqun/entity/StatusCode.java" />
-        <option value="$PROJECT_DIR$/micro_city/src/main/java/com/yanqun/micro_city/controller/CityController.java" />
-        <option value="$PROJECT_DIR$/micro_city2/src/main/resources/mybatis.xml" />
-        <option value="$PROJECT_DIR$/micro_city2/src/main/java/com/yanqun/micro_city2/MicroCityApplication.java" />
-        <option value="$PROJECT_DIR$/micro_city2/src/main/java/com/yanqun/micro_city2/controller/CityController.java" />
-        <option value="$PROJECT_DIR$/micro_city2/src/main/java/com/yanqun/micro_city2/service/CityService.java" />
-        <option value="$PROJECT_DIR$/micro_city2/src/main/java/com/yanqun/micro_city2/mapper/CityMapper.xml" />
-        <option value="$PROJECT_DIR$/micro_city2/pom.xml" />
-        <option value="$PROJECT_DIR$/micro_city2/src/main/java/com/yanqun/micro_city2/mapper/CityMapper.java" />
-        <option value="$PROJECT_DIR$/micro_city2/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/micro_city3/pom.xml" />
-        <option value="$PROJECT_DIR$/micro_city3/src/main/java/micro_city3/service/CityService.java" />
-        <option value="$PROJECT_DIR$/micro_city3/src/test/java/micro_city3/MicroCityApplication.java" />
-        <option value="$PROJECT_DIR$/micro_city3/src/test/java/micro_city3/MicroCityApplicationTest.java" />
-        <option value="$PROJECT_DIR$/micro_city3/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/micro_city3/src/main/java/micro_city3/MicroCityApplication.java" />
         <option value="$PROJECT_DIR$/micro_city3/src/test/java/MiCro_CIty3_Test.java" />
         <option value="$PROJECT_DIR$/micro_city4/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/micro_city4/pom.xml" />
         <option value="$PROJECT_DIR$/micro_city3/src/main/resources/applicationContext.xml" />
         <option value="$PROJECT_DIR$/micro_city4/src/main/java/micro_city4/MyConfiguration.java" />
         <option value="$PROJECT_DIR$/micro_city4/src/main/java/micro_city4/MicroCityApplication.java" />
+        <option value="$PROJECT_DIR$/micro_city4/pom.xml" />
+        <option value="$PROJECT_DIR$/micro_person/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/micro_person/src/main/java/com/yanqun/entity/Person.java" />
+        <option value="$PROJECT_DIR$/micro_person/pom.xml" />
+        <option value="$PROJECT_DIR$/micro_people/src/main/java/com/yanqun/entity/Person.java" />
+        <option value="$PROJECT_DIR$/micro_common/src/main/java/com/yanqun/entity/Message.java" />
+        <option value="$PROJECT_DIR$/micro_people/src/main/java/com/yanqun/MicroPeopleApplication.java" />
+        <option value="$PROJECT_DIR$/micro_people/pom.xml" />
+        <option value="$PROJECT_DIR$/micro_people/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/micro_city/src/main/java/com/yanqun/micro_city/entity/City.java" />
+        <option value="$PROJECT_DIR$/micro_city2/src/main/java/com/yanqun/micro_city2/entity/City.java" />
+        <option value="$PROJECT_DIR$/micro_city3/src/main/java/micro_city4/entity/City.java" />
+        <option value="$PROJECT_DIR$/micro_city4/src/main/java/micro_city4/entity/City.java" />
+        <option value="$PROJECT_DIR$/micro_people/src/main/java/com/yanqun/entity/People.java" />
+        <option value="$PROJECT_DIR$/micro_people/src/main/java/com/yanqun/entity/Address.java" />
+        <option value="$PROJECT_DIR$/micro_people/src/main/java/com/yanqun/controller/AddressControler.java" />
+        <option value="$PROJECT_DIR$/micro_people/src/main/java/com/yanqun/service/AddressService.java" />
+        <option value="$PROJECT_DIR$/micro_people/src/main/java/com/yanqun/dao/AddressDao.java" />
+        <option value="$PROJECT_DIR$/micro_people/src/main/java/com/yanqun/dao/PeopleDao.java" />
+        <option value="$PROJECT_DIR$/micro_people/src/main/java/com/yanqun/controller/PeopleController.java" />
+        <option value="$PROJECT_DIR$/micro_people/src/main/java/com/yanqun/service/PeopleService.java" />
+        <option value="$PROJECT_DIR$/projct_httpclient/src/main/java/HttpClientDemo02.java" />
+        <option value="$PROJECT_DIR$/projct_httpclient/src/main/java/HttpClientDemo01.java" />
+        <option value="$PROJECT_DIR$/projct_httpclient/src/main/java/X.java" />
+        <option value="$PROJECT_DIR$/projct_httpclient/src/main/java/HttpClientDemo03.java" />
+        <option value="$PROJECT_DIR$/projct_httpclient/src/main/java/HttpClientDemo04.java" />
+        <option value="$PROJECT_DIR$/projct_httpclient/src/main/java/HttpClientDemo05.java" />
+        <option value="$PROJECT_DIR$/projct_httpclient/pom.xml" />
+        <option value="$PROJECT_DIR$/projct_httpclient/src/main/java/RequestParam.java" />
+        <option value="$PROJECT_DIR$/projct_httpclient/src/main/java/HttpClientDemo06.java" />
+        <option value="$PROJECT_DIR$/projct_httpclient/src/main/java/URLConnectionDemo.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/micro_httpclient/pom.xml" />
+        <option value="$PROJECT_DIR$/micro_httpclient/src/main/java/micro_httpclient/MyHttpClientConfig.java" />
+        <option value="$PROJECT_DIR$/micro_httpclient/src/main/java/micro_httpclient/entity/HttpResponse.java" />
+        <option value="$PROJECT_DIR$/micro_httpclient/src/main/java/micro_httpclient/test/Test.java" />
+        <option value="$PROJECT_DIR$/micro_httpclient/src/main/resources/appliation.yml" />
+        <option value="$PROJECT_DIR$/micro_httpclient/src/main/java/micro_httpclient/HttpClientApplication.java" />
+        <option value="$PROJECT_DIR$/micro_httpclient/src/main/java/micro_httpclient/config/MyHttpClientConfig.java" />
+        <option value="$PROJECT_DIR$/micro_httpclient/src/main/java/micro_httpclient/controller/HttpClientController.java" />
+        <option value="$PROJECT_DIR$/micro_httpclient/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/micro_httpclient/src/main/java/micro_httpclient/service/HttpClientService.java" />
+        <option value="$PROJECT_DIR$/project_jsoup/src/main/java/com/yanquan/jsoup.java" />
+        <option value="$PROJECT_DIR$/project_jsoup/pom.xml" />
+        <option value="$PROJECT_DIR$/project_jsoup/src/main/java/com/yanquan/JsoupDemo01.java" />
+        <option value="$PROJECT_DIR$/project_jsoup/src/main/java/com/yanquan/JsoupDemo02.java" />
       </list>
     </option>
   </component>
@@ -130,32 +188,13 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="micro_city2" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="micro_city2" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="micro_common" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="micro_common" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-      </expand>
+      <expand />
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="330" />
-    <option name="y" value="95" />
+    <option name="x" value="225" />
+    <option name="y" value="85" />
     <option name="width" value="1470" />
     <option name="height" value="630" />
   </component>
@@ -164,7 +203,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -205,7 +243,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_city4" type="462c0819:PsiDirectoryNode" />
+              <item name="micro_city3" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
@@ -213,22 +251,9 @@
               <item name="micro_city3" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_city3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_city3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="micro_city3" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
@@ -263,7 +288,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_city4" type="462c0819:PsiDirectoryNode" />
+              <item name="micro_city3" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
@@ -271,19 +296,95 @@
               <item name="micro_city4" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="micro_city3" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_city4" type="462c0819:PsiDirectoryNode" />
+              <item name="micro_people" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="microservice" type="462c0819:PsiDirectoryNode" />
+              <item name="micro_people" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="microservice" type="462c0819:PsiDirectoryNode" />
+              <item name="micro_people" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="microservice" type="462c0819:PsiDirectoryNode" />
+              <item name="micro_people" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="microservice" type="462c0819:PsiDirectoryNode" />
+              <item name="micro_people" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yanqun" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="microservice" type="462c0819:PsiDirectoryNode" />
+              <item name="micro_people" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yanqun" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="microservice" type="462c0819:PsiDirectoryNode" />
+              <item name="project_jsoup" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="microservice" type="462c0819:PsiDirectoryNode" />
+              <item name="project_jsoup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="microservice" type="462c0819:PsiDirectoryNode" />
+              <item name="project_jsoup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="microservice" type="462c0819:PsiDirectoryNode" />
+              <item name="project_jsoup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="microservice" type="462c0819:PsiDirectoryNode" />
+              <item name="project_jsoup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yanquan" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -294,24 +395,30 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/micro_city4/src/main/java" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/micro_people/src/main/java" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.49885058" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="micro_httpclient" />
       <recent name="" />
+      <recent name="com.yanqun" />
       <recent name="com.yanqun.micro_city2.mapper" />
       <recent name="com.yanqun.micro_city2.entity" />
-      <recent name="com.yanqun.micro_city2" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github\JavaCore\src\microservice\micro_people\src\main\java" />
+      <recent name="D:\github\JavaCore\src\microservice\micro_people\src\main\resources" />
+      <recent name="D:\github\JavaCore\src\microservice\micro_person\src\main\resources" />
+      <recent name="D:\github\JavaCore\src\microservice\micro_person\src\main\java" />
       <recent name="D:\github\JavaCore\src\microservice\micro_city4\src\main\java" />
-      <recent name="D:\github\JavaCore\src\microservice\micro_city4\src\main\resources" />
-      <recent name="D:\github\JavaCore\src\microservice\micro_city3\src\main\resources" />
-      <recent name="D:\github\JavaCore\src\microservice\micro_city3\src\test\java" />
-      <recent name="D:\github\JavaCore\src\microservice\micro_city3\src\main\java" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -332,62 +439,56 @@
     </option>
     <option name="contentProportion" value="0.2124317" />
   </component>
-  <component name="RunManager" selected="JUnit.MiCro_CIty3_Test (1)">
-    <configuration name="MiCro_CIty3_Test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="micro_city4" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MiCro_CIty3_Test" />
-      <option name="TEST_OBJECT" value="class" />
+  <component name="RunManager" selected="Application.JsoupDemo02">
+    <configuration name="HttpClientDemo01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HttpClientDemo01" />
+      <module name="projct_httpclient" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MiCro_CIty3_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="micro_city3" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MiCro_CIty3_Test" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MiCro_CIty3_Test.testIoc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="micro_city3" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MiCro_CIty3_Test" />
-      <option name="METHOD_NAME" value="testIoc" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MicroCityApplicationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="micro_city3" />
+    <configuration name="JsoupDemo01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yanquan.JsoupDemo01" />
+      <module name="project_jsoup" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="micro_city4.*" />
+          <option name="PATTERN" value="com.yanquan.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="micro_city3" />
-      <option name="MAIN_CLASS_NAME" value="micro_city3.MicroCityApplicationTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MicroCityApplication.testIoc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="micro_city3" />
+    <configuration name="JsoupDemo02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yanquan.JsoupDemo02" />
+      <module name="project_jsoup" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="micro_city4.*" />
+          <option name="PATTERN" value="com.yanquan.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="micro_city4" />
-      <option name="MAIN_CLASS_NAME" value="micro_city4.MicroCityApplication" />
-      <option name="METHOD_NAME" value="testIoc" />
-      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="URLConnectionDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="URLConnectionDemo" />
+      <module name="projct_httpclient" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="micro_httpclient" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="micro_httpclient.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="micro_httpclient.HttpClientApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -408,11 +509,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MiCro_CIty3_Test (1)" />
-        <item itemvalue="JUnit.MiCro_CIty3_Test" />
-        <item itemvalue="JUnit.MiCro_CIty3_Test.testIoc" />
-        <item itemvalue="JUnit.MicroCityApplicationTest" />
-        <item itemvalue="JUnit.MicroCityApplication.testIoc" />
+        <item itemvalue="Application.JsoupDemo02" />
+        <item itemvalue="Application.JsoupDemo01" />
+        <item itemvalue="Application.HttpClientDemo01" />
+        <item itemvalue="Spring Boot.HttpClientApplication" />
+        <item itemvalue="Application.URLConnectionDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -440,6 +541,30 @@
       <workItem from="1583384093796" duration="441000" />
       <workItem from="1583384865570" duration="240000" />
       <workItem from="1583390737529" duration="5694000" />
+      <workItem from="1583455812609" duration="1615000" />
+      <workItem from="1583909678939" duration="7168000" />
+      <workItem from="1583976308753" duration="183000" />
+      <workItem from="1583978421227" duration="6798000" />
+      <workItem from="1584002545007" duration="842000" />
+      <workItem from="1584063113314" duration="7043000" />
+      <workItem from="1584321575027" duration="6000" />
+      <workItem from="1584321875255" duration="9969000" />
+      <workItem from="1584345277172" duration="1310000" />
+      <workItem from="1584407200053" duration="6346000" />
+      <workItem from="1584426441539" duration="591000" />
+      <workItem from="1584492122313" duration="2437000" />
+      <workItem from="1584515096384" duration="2599000" />
+      <workItem from="1584525142959" duration="39000" />
+      <workItem from="1584581412881" duration="186000" />
+      <workItem from="1584604368049" duration="4144000" />
+      <workItem from="1584667029363" duration="3372000" />
+      <workItem from="1584671636575" duration="618000" />
+      <workItem from="1585010647765" duration="7097000" />
+      <workItem from="1585096249898" duration="6933000" />
+      <workItem from="1585190986996" duration="1518000" />
+      <workItem from="1585210539938" duration="2169000" />
+      <workItem from="1585270738756" duration="601000" />
+      <workItem from="1585548169933" duration="304000" />
     </task>
     <servers />
   </component>
@@ -476,10 +601,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22048000" />
+    <option name="totallyTimeSpent" value="95936000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="1" />
@@ -488,28 +614,28 @@
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.22788204" />
+      <window_info content_ui="combo" id="Project" order="7" weight="0.21581769" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.33097595" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31541726" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.1923621" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="5" weight="0.42149928" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.40452617" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32956153" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.34512022" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32956153" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.19377652" />
-      <window_info anchor="bottom" id="Run Dashboard" order="15" weight="0.3847242" />
+      <window_info anchor="bottom" id="Run Dashboard" order="15" weight="0.3536068" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
       <window_info anchor="right" id="Palette" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.32573727" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.19571045" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
@@ -525,28 +651,28 @@
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.17895442" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.21581769" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.33097595" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4115983" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.1923621" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="5" weight="0.42149928" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.40452617" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32956153" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.34512022" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32956153" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.19377652" />
-      <window_info anchor="bottom" id="Run Dashboard" order="15" weight="0.3847242" />
+      <window_info anchor="bottom" id="Run Dashboard" order="15" weight="0.3536068" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
       <window_info anchor="right" id="Palette" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.32573727" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.19571045" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
@@ -559,48 +685,310 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/micro_common/abc/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/abc/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/micro_common/pom.xml">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.6/httpclient-4.5.6-sources.jar!/org/apache/http/client/config/RequestConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="4" selection-start-line="4" selection-end-line="14" />
+        <state relative-caret-position="13959">
+          <caret line="489" selection-start-line="489" selection-end-line="489" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/micro_common/src/main/java/com/yanqun/entity/Message.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.6/httpclient-4.5.6-sources.jar!/org/apache/http/impl/client/HttpClients.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="13" column="58" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="58" />
+        <state relative-caret-position="792">
+          <caret line="54" column="38" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.6/httpclient-4.5.6-sources.jar!/org/apache/http/impl/client/HttpClientBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26763">
+          <caret line="932" column="31" selection-start-line="932" selection-start-column="31" selection-end-line="932" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.8.0_101/src.zip!/java/util/regex/Matcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="519" column="15" lean-forward="true" selection-start-line="519" selection-start-column="15" selection-end-line="519" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projct_httpclient/src/main/java/X.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.6/httpclient-4.5.6-sources.jar!/org/apache/http/client/methods/HttpGet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="63" column="31" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.8.0_101/src.zip!/java/net/URI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="847" column="39" selection-start-line="847" selection-start-column="36" selection-end-line="847" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.6/httpclient-4.5.6-sources.jar!/org/apache/http/client/utils/URIBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="317" column="67" lean-forward="true" selection-start-line="317" selection-start-column="42" selection-end-line="317" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.4.11/httpcore-4.4.11.jar!/org/apache/http/NameValuePair.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projct_httpclient/src/main/java/HttpClientDemo02.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projct_httpclient/src/main/java/RequestParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="21" />
           <folding>
-            <element signature="e#206#207#0" expanded="true" />
-            <element signature="e#233#234#0" expanded="true" />
-            <element signature="e#274#275#0" expanded="true" />
-            <element signature="e#306#307#0" expanded="true" />
-            <element signature="e#338#339#0" expanded="true" />
-            <element signature="e#365#366#0" expanded="true" />
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#469#470#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
-            <element signature="e#536#537#0" expanded="true" />
-            <element signature="e#568#569#0" expanded="true" />
+            <element signature="e#139#140#0" expanded="true" />
+            <element signature="e#164#165#0" expanded="true" />
+            <element signature="e#200#201#0" expanded="true" />
+            <element signature="e#228#229#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/micro_common/src/main/java/com/yanqun/entity/StatusCode.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.6/httpclient-4.5.6-sources.jar!/org/apache/http/client/methods/HttpEntityEnclosingRequestBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="29" />
+        <state relative-caret-position="226">
+          <caret line="56" column="42" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="42" />
+          <folding>
+            <element signature="e#1913#1914#0" expanded="true" />
+            <element signature="e#1949#1950#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city/src/main/java/abc/XX.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.4.11/httpcore-4.4.11.jar!/org/apache/http/entity/StringEntity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.8.0_101/src.zip!/java/io/InputStreamReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="70" column="11" selection-start-line="70" selection-start-column="11" selection-end-line="70" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.8.0_101/src.zip!/java/net/URLConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25179">
+          <caret line="828" column="22" selection-start-line="828" selection-start-column="11" selection-end-line="828" selection-end-column="22" />
+          <folding>
+            <element signature="e#16382#16383#0" expanded="true" />
+            <element signature="e#16412#16413#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projct_httpclient/src/main/java/URLConnectionDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="69" column="9" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projct_httpclient/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="16" selection-start-line="16" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projct_httpclient/src/main/java/HttpClientDemo05.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-528">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projct_httpclient/src/main/java/HttpClientDemo06.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-660">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projct_httpclient/src/main/java/HttpClientDemo04.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-242">
+          <caret line="28" column="36" lean-forward="true" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projct_httpclient/src/main/java/HttpClientDemo03.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="21" column="42" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.7/httpclient-4.5.7.jar!/org/apache/http/client/HttpClient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.7/httpclient-4.5.7.jar!/org/apache/http/impl/client/CloseableHttpClient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="30" column="41" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.7/httpclient-4.5.7.jar!/org/apache/http/client/config/RequestConfig.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="269" column="65" selection-start-line="269" selection-start-column="37" selection-end-line="269" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micro_httpclient/src/main/java/micro_httpclient/entity/HttpResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <folding>
+            <element signature="e#214#215#0" expanded="true" />
+            <element signature="e#267#268#0" expanded="true" />
+            <element signature="e#311#312#0" expanded="true" />
+            <element signature="e#342#343#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.8.0_101/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="138" column="15" lean-forward="true" selection-start-line="138" selection-start-column="15" selection-end-line="138" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micro_httpclient/src/main/java/micro_httpclient/test/Test.java" />
+    <entry file="file://$PROJECT_DIR$/micro_people/src/main/java/com/yanqun/controller/AddressControler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/micro_city/src/main/java/com/yanqun/micro_city/controller/CityController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="15" />
+        <state relative-caret-position="226">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micro_city4/src/main/java/micro_city3/MicroCityApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micro_city4/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.4.11/httpcore-4.4.11.jar!/org/apache/http/message/BasicNameValuePair.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="22" column="49" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.7/httpclient-4.5.7.jar!/org/apache/http/client/methods/HttpEntityEnclosingRequestBase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="36" />
+          <folding>
+            <element signature="e#631#632#0" expanded="true" />
+            <element signature="e#667#668#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.4.11/httpcore-4.4.11.jar!/org/apache/http/HttpEntity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.7/httpclient-4.5.7.jar!/org/apache/http/client/utils/URIBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="279" column="61" selection-start-line="279" selection-start-column="56" selection-end-line="279" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micro_httpclient/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micro_httpclient/src/main/java/micro_httpclient/HttpClientApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micro_httpclient/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micro_httpclient/src/main/java/micro_httpclient/service/HttpClientService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micro_httpclient/src/main/java/micro_httpclient/config/MyHttpClientConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -609,259 +997,96 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        <state relative-caret-position="107">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city/pom.xml">
+    <entry file="file://$PROJECT_DIR$/micro_httpclient/src/main/java/micro_httpclient/controller/HttpClientController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="45" column="21" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="45" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city/src/main/java/com/yanqun/micro_city/entity/City.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city/src/main/java/com/yanqun/micro_city/service/CityService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city/src/main/java/com/yanqun/micro_city/MicroCityApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city/src/main/java/com/yanqun/micro_city/mapper/CityMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" selection-end-column="9" />
+        <state relative-caret-position="93">
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/projct_httpclient/src/main/java/HttpClientDemo01.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city2/src/main/java/com/yanqun/micro_city2/mapper/CityMapper.xml" />
-    <entry file="file://$PROJECT_DIR$/micro_city2/src/main/resources/mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city2/src/main/java/com/yanqun/micro_city2/MicroCityApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city2/src/main/java/com/yanqun/micro_city2/controller/CityController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+        <state relative-caret-position="132">
+          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city2/src/main/java/com/yanqun/micro_city2/mapper/CityMapper.java">
+    <entry file="file://$PROJECT_DIR$/project_jsoup/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="990">
+          <caret line="30" column="28" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_jsoup/src/main/java/com/yanquan/JsoupDemo01.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city2/src/main/java/com/yanqun/micro_city2/service/CityService.java">
+    <entry file="file://$PROJECT_DIR$/project_jsoup/src/main/java/com/yanquan/JsoupDemo02.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="138">
+          <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city2/src/main/resources/com/yanqun/micro_city2/mapper/CityMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city2/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="12" selection-start-line="12" selection-end-line="58" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city3/src/main/java/micro_city2/controller/CityController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city3/src/main/java/micro_city2/service/CityService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city3/src/main/java/micro_city2/mapper/CityMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city3/src/main/java/micro_city4/entity/City.java">
+    <entry file="file://$PROJECT_DIR$/micro_city3/src/main/java/micro_city3/dao/CityDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.1.5.RELEASE/spring-context-5.1.5.RELEASE.jar!/org/springframework/context/annotation/ImportResource.class">
+    <entry file="file://$PROJECT_DIR$/micro_people/src/main/java/com/yanqun/dao/AddressDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="24" />
+        <state relative-caret-position="-119">
+          <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city3/src/main/java/micro_city4/service/CityService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="e#177#178#0" expanded="true" />
-            <element signature="e#207#208#0" expanded="true" />
-            <element signature="e#254#255#0" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city3/src/test/java/micro_city3/MicroCityApplicationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city3/src/main/java/micro_city4/dao/CityDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city2/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city3/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city3/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city4/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city4/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city4/src/main/java/micro_city4/dao/CityDao.java">
+    <entry file="file://$PROJECT_DIR$/micro_city4/src/main/java/micro_city3/dao/CityDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city3/src/test/java/MiCro_CIty3_Test.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.jar!/org/jsoup/Jsoup.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="560">
+          <caret line="63" column="59" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micro_people/src/main/java/com/yanqun/dao/PeopleDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-962">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city3/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="5" column="66" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city4/src/test/java/MiCro_CIty3_Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city3/src/main/java/micro_city4/MicroCityApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city4/src/main/java/micro_city4/MicroCityApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city4/src/main/java/micro_city4/MyConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#0#41#1" expanded="true" />
+            <element signature="e#0#38#1" expanded="true" />
+            <element signature="e#0#73#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -869,6 +1094,64 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>micro_person</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.49885058" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
@@ -876,6 +1159,18 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: javax.validation:validation-api:2.0.1.Final</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.49885058" />
               </list>
             </option>
           </splitter-proportions>

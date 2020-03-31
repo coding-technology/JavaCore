@@ -3,12 +3,12 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="cityService"  class="micro_city4.service.CityService" >
+    <bean id="cityService"  class="micro_city3.service.CityService" >
             <property name="cityDao"  ref="cityDao"></property>
     </bean>
 
 
-    <bean id="cityDao"  class="micro_city4.dao.CityDao" >
+    <bean id="cityDao"  class="micro_city3.dao.CityDao" >
 
     </bean>
 

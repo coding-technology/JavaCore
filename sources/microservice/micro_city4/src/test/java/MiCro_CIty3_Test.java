@@ -2,9 +2,9 @@
  * Created by 颜群
  */
 
-import micro_city4.MicroCityApplication;
-import micro_city4.dao.CityDao;
-import micro_city4.service.CityService;
+import micro_city3.MicroCityApplication;
+import micro_city3.dao.CityDao;
+import micro_city3.service.CityService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

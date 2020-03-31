@@ -6,14 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="micro_city2" />
+        <module name="micro_httpclient" />
         <module name="micro_city" />
+        <module name="micro_people" />
         <module name="micro_city4" />
         <module name="micro_city3" />
+        <module name="micro_city2" />
+        <module name="projct_httpclient" />
+        <module name="project_jsoup" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="abc" target="1.8" />
+      <module name="micro_person" target="1.8" />
+      <module name="XXX" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

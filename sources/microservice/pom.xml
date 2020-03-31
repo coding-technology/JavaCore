@@ -14,6 +14,10 @@
         <module>micro_city2</module>
         <module>micro_city3</module>
         <module>micro_city4</module>
+        <module>micro_people</module>
+        <module>projct_httpclient</module>
+        <module>micro_httpclient</module>
+        <module>project_jsoup</module>
     </modules>
 
     <properties>

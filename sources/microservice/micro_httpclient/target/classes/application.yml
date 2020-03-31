@@ -1,0 +1,9 @@
+http:
+  maxTotal: 100
+  defaultMaxPerRout: 20
+  connectTimeout: 3000
+  connectRequestTimeout: 2000
+  socketTimeout: 5000
+
+server:
+  port: 8886

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student id="1001">
+        <name>张三</name>
+        <age>23</age>
+        <birthday>1966-06-06</birthday>
+    </student>
+    <student id="1002" >
+        <name>李四</name>
+        <age>24</age>
+        <birthday>1999-09-09</birthday>
+    </student>
+
+</students>
+<!--
+DOM：一次性将整个dom树装入内存。
+SAX:事件驱动（程序在执行时，到哪个阶段时，自动触发那个阶段的相应方法 ）。扫描开头和结束标签，触发相应的事件
+ -->

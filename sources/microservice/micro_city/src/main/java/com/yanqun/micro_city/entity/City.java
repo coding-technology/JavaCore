@@ -1,9 +1,11 @@
 package com.yanqun.micro_city.entity;
 
+import java.io.Serializable;
+
 /*
  * Created by 颜群
  */
-public class City {
+public class City implements Serializable {
     private Integer id ;
     private String name;
     private double area ;//城市面积
