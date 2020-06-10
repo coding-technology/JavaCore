@@ -6,19 +6,30 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="micro_httpclient" />
-        <module name="micro_city" />
-        <module name="micro_people" />
-        <module name="micro_city4" />
         <module name="micro_city3" />
         <module name="micro_city2" />
-        <module name="projct_httpclient" />
+        <module name="micro_eureka" />
+        <module name="micro_people" />
+        <module name="micro_httpclient" />
+        <module name="project-webmagic" />
+        <module name="project_neo4j" />
+        <module name="project_crawler" />
+        <module name="micro_city" />
+        <module name="project_jedis" />
         <module name="project_jsoup" />
+        <module name="project_hbase" />
+        <module name="projectwebmagic" />
+        <module name="projct_httpclient" />
+        <module name="micro_city4" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ABC" target="1.8" />
       <module name="abc" target="1.8" />
+      <module name="micro_eureka2" target="1.8" />
+      <module name="micro_eureka3" target="1.8" />
       <module name="micro_person" target="1.8" />
+      <module name="ShiPinHao" target="1.8" />
       <module name="XXX" target="1.8" />
     </bytecodeTargetLevel>
   </component>

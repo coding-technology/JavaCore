@@ -9,6 +9,13 @@ public class City implements Serializable {
     private Integer id ;
     private String name;
     private double area ;//城市面积
+    public City() {
+    }
+    public City(Integer id, String name, double area) {
+        this.id = id;
+        this.name = name;
+        this.area = area;
+    }
 
     public Integer getId() {
         return id;

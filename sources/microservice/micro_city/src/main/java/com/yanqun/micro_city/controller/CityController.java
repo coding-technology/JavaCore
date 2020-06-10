@@ -3,11 +3,8 @@ package com.yanqun.micro_city.controller;
 import com.yanqun.entity.Message;
 import com.yanqun.entity.StatusCode;
 import com.yanqun.micro_city.entity.City;
-import com.yanqun.micro_city.mapper.CityMapper;
 import com.yanqun.micro_city.service.CityService;
-import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -49,5 +46,11 @@ public class CityController {//spring mvc
     public Message queryCities(){
         List<City> cities = cityService.queryCities();
         return  new Message(true, StatusCode.OK,   cities );
+    }
+
+    @GetMapping("queryCityBiId/{id}")
+    public Message queryCityBiId( @PathVariable("id") Integer  id){
+        City city = cityService.queryCityBiId(1);
+        return  new Message(true, StatusCode.OK,   city );
     }
 }

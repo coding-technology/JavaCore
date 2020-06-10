@@ -49,7 +49,7 @@ public class URLConnectionDemo {
 
             html :    aaa<div ccc >xxxxx</div>bbbb
              (.+):贪婪模式  :  <.+>  :  <div ccc >xxxxx</div>
-            (.+?) :惰性模式 :   <.+?> :  <div ccc >
+             (.+?) :惰性模式 :   <.+?> :  <div ccc >
 
 
          */

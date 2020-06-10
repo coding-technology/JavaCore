@@ -1,12 +1,6 @@
 package com.yanqun.micro_city.service;
 
 import com.yanqun.micro_city.entity.City;
-import com.yanqun.micro_city.mapper.CityMapper;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,23 +11,43 @@ import java.util.List;
 @Service
 public class CityService {
 
-    @Autowired
-    CityMapper cityMapper ;//service 注入mapper(dao)
+//    @Autowired
+//    CityMapper cityMapper ;//service 注入mapper(dao)
+
+//    public boolean addCity(City city){
+//        return cityMapper.addCity(city);
+//    }
+//
+//    public boolean deleteById(Integer  id){
+//            return cityMapper.deleteById(id) ;
+//    }
+//
+//    public boolean updateCityById(City city){
+//        return cityMapper.updateCityById(city) ;
+//    }
+//
+//    public List<City> queryCities(){
+//        return cityMapper.queryCities() ;
+//    }
 
     public boolean addCity(City city){
-        return cityMapper.addCity(city);
+        return true;
     }
 
     public boolean deleteById(Integer  id){
-            return cityMapper.deleteById(id) ;
+        return true ;
     }
 
     public boolean updateCityById(City city){
-        return cityMapper.updateCityById(city) ;
+        return true ;
     }
 
     public List<City> queryCities(){
-        return cityMapper.queryCities() ;
+        return null;
+    }
+
+    public City queryCityBiId(Integer  id){
+        return new City(1,"xa",9999999);
     }
 
 }

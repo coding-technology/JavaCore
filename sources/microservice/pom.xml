@@ -18,6 +18,12 @@
         <module>projct_httpclient</module>
         <module>micro_httpclient</module>
         <module>project_jsoup</module>
+        <module>project_crawler</module>
+        <module>project-webmagic</module>
+        <module>project_jedis</module>
+        <module>project_hbase</module>
+        <module>project_neo4j</module>
+        <module>micro_eureka</module>
     </modules>
 
     <properties>
