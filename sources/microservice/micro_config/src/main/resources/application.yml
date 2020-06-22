@@ -1,17 +1,10 @@
-eureka:
-  instance:
-    instance-id: cityId
-
-  client:
-    service-url:
-      defaultZone: http://localhost:9991/eureka/
 
 server:
   port: 10010
 
 spring:
   application:
-    name: city
+    name: config
   cloud:
     config:
       server:

@@ -271,8 +271,6 @@ eureka:
 
 3.编码
 
-
-
 city2 -> 远程对象- >city
 
 远程对象： RestTemplate  ，将该对象 放入IoC容器
