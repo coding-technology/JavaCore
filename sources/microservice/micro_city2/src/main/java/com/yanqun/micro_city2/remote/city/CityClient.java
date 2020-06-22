@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient("city")
+@FeignClient(value="city" ,  fallback = CityClientImpl.class)
 public interface CityClient {
     @GetMapping("queryCityBiId/{id}")
     public Message queryCityBiId(@PathVariable("id") Integer  id) ;

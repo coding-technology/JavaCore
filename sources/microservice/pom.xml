@@ -24,6 +24,8 @@
         <module>project_hbase</module>
         <module>project_neo4j</module>
         <module>micro_eureka</module>
+        <module>micro_zuul</module>
+        <module>micro_config</module>
     </modules>
 
     <properties>

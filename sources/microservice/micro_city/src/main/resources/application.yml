@@ -1,11 +1,7 @@
-eureka:
-  instance:
-    instance-id: cityId
-
-  client:
-    service-url:
-      defaultZone: http://localhost:9991/eureka/
-
 spring:
   application:
     name: city
+
+server:
+  port: 8881
+

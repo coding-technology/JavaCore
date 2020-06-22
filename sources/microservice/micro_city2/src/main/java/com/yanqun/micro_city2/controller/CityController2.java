@@ -7,6 +7,7 @@ import com.yanqun.micro_city2.remote.city.CityClient;
 import com.yanqun.micro_city2.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -16,9 +17,13 @@ import java.util.List;
 
 @RestController
 public class CityController2 {//spring mvc
-    //调用远程（city）的service  （通过“city远程对象(CityClient)“ 的访问 city）
+    //feign方式的，调用远程（city）的service  （通过“city远程对象(CityClient)“ 的访问 city）
     @Autowired
     private CityClient cityClient ;
+
+    //ribbon方式的，远程调用
+    @Autowired
+    private RestTemplate restTemplate ;
 
 
     //调用自己的service
@@ -26,7 +31,21 @@ public class CityController2 {//spring mvc
     CityService cityService ;//service 注入mapper(dao)
 
 
-    //远程访问city中的方法
+    //远程访问city中的方法(ribbon)
+    @GetMapping("/findCityByIdRibbon/{id}")
+    public Message findCityByIdRibbon(@PathVariable("id") Integer id){
+        System.out.println("ribbon调用远程方法");
+        //返回值 = getForObject( 映射地址，返回值类型，参数)  ip?a=b&c=d
+
+        //http://city/queryCityBiId/{id}
+//        return  restTemplate.getForObject( "http://city/queryCityBiId/"  , Message.class,id  );//方法的返回值，就是远程访问方法的返回值
+        return  restTemplate.getForObject( "http://city/queryCityBiId/"+id  , Message.class  );//方法的返回值，就是远程访问方法的返回值
+//        restTemplate.getForEntity() ;
+    }
+
+
+
+    //远程访问city中的方法(fegin)
     @GetMapping("/findCityById2/{id}")
     public Message findCityById2(@PathVariable("id") Integer id){
 

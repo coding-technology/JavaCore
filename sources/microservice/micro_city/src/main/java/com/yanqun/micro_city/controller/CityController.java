@@ -50,7 +50,7 @@ public class CityController {//spring mvc
 
     @GetMapping("queryCityBiId/{id}")
     public Message queryCityBiId( @PathVariable("id") Integer  id){
-        City city = cityService.queryCityBiId(1);
+        City city = cityService.queryCityBiId(id);
         return  new Message(true, StatusCode.OK,   city );
     }
 }

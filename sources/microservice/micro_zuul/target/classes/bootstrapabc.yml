@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      name: micro
+      profile: zuul
+      label: master
+      uri: http://127.0.0.1:10010
+
+

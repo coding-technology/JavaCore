@@ -1,0 +1,21 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9991/eureka/
+
+spring:
+  application:
+    name: zuul
+server:
+  port: 10001
+
+zuul:
+  prefix: /yq
+  ignored-services: "*"
+  # ignored-services: "city"
+  routes:
+    city:
+      path: /mycity/**
+ribbon:
+  eureka:
+    enabled: false
