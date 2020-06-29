@@ -26,6 +26,7 @@
         <module>micro_eureka</module>
         <module>micro_zuul</module>
         <module>micro_config</module>
+        <module>project_myJwt</module>
     </modules>
 
     <properties>

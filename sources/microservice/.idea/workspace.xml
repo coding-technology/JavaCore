@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa898001-c0de-4b01-ae9c-aa12eef4af72" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../notes/微服务/SpringCloud.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/微服务/SpringCloud.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_myJwt/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_myJwt/src/main/java/JWTClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_myJwt/src/main/java/JWTServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../notes/微服务/微服务.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/微服务/微服务.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../notes/面试题/1.JAVA基础面试题1-50.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/面试题/1.JAVA基础面试题1-50.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro_city/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/micro_city/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro_city/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/micro_city/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro_city2/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/micro_city2/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro_city2/target/classes/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/micro_city2/target/classes/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro_config/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/micro_config/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro_zuul/src/main/resources/application123.yml" beforeDir="false" afterPath="$PROJECT_DIR$/micro_zuul/src/main/resources/application123.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro_zuul/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/micro_zuul/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro_zuul/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro_zuul/target/classes/bootstrapabc.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -40,6 +37,7 @@
     <ignored path="$PROJECT_DIR$/micro_eureka3/target/" />
     <ignored path="$PROJECT_DIR$/micro_zuul/target/" />
     <ignored path="$PROJECT_DIR$/micro_config/target/" />
+    <ignored path="$PROJECT_DIR$/project_myJwt/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,20 +52,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/micro_config/src/main/resources/application.yml">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project_myJwt/src/main/java/JWTServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+            <state relative-caret-position="653">
+              <caret line="35" lean-forward="true" selection-end-line="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1457#1458#0" expanded="true" />
+                <element signature="e#1486#1487#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/micro_city/src/main/resources/application.yml">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project_myJwt/src/main/java/JWTClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="6" selection-end-column="48" />
+            <state relative-caret-position="266">
+              <caret line="26" column="46" lean-forward="true" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,9 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/project_jedis/pom.xml" />
-        <option value="$PROJECT_DIR$/project_jedis/src/main/java/JedisDemo.java" />
-        <option value="$PROJECT_DIR$/project_crawler/src/main/java/com/yanqun/entity/Course.java" />
         <option value="$PROJECT_DIR$/project_crawler/src/main/java/com/yanqun/util/JsonUtils.java" />
         <option value="$PROJECT_DIR$/project_hbase/pom.xml" />
         <option value="$PROJECT_DIR$/project_crawler/pom.xml" />
@@ -182,6 +185,9 @@
         <option value="$PROJECT_DIR$/micro_zuul/src/main/resources/application123.yml" />
         <option value="$PROJECT_DIR$/micro_city/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/micro_config/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/project_myJwt/pom.xml" />
+        <option value="$PROJECT_DIR$/project_myJwt/src/main/java/JWTServer.java" />
+        <option value="$PROJECT_DIR$/project_myJwt/src/main/java/JWTClient.java" />
       </list>
     </option>
   </component>
@@ -239,98 +245,28 @@
             <path>
               <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_city" type="462c0819:PsiDirectoryNode" />
+              <item name="project_myJwt" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_config" type="462c0819:PsiDirectoryNode" />
+              <item name="project_myJwt" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_config" type="462c0819:PsiDirectoryNode" />
+              <item name="project_myJwt" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_config" type="462c0819:PsiDirectoryNode" />
+              <item name="project_myJwt" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_config" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_config" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_eureka" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_zuul" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_zuul" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_zuul" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_zuul" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_zuul" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="yanqun" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="micro_zuul" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -348,7 +284,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/micro_config/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -397,23 +333,24 @@
     </option>
     <option name="contentProportion" value="0.2124317" />
   </component>
-  <component name="RunManager" selected="Spring Boot.MicroConfigApplication">
-    <configuration name="MicroCity2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="micro_city2" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yanqun.micro_city2.MicroCity2Application" />
+  <component name="RunManager" selected="Application.JWTClient">
+    <configuration name="JWTClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JWTClient" />
+      <module name="project_myJwt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MicroCityApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="JWTServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JWTServer" />
+      <module name="project_myJwt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MicroCity2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="micro_city2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.yanqun.micro_city2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yanqun.micro_city2.MicroCityApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yanqun.micro_city2.MicroCity2Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -457,19 +394,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MicroEurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="micro_eureka" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.yanqun.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yanqun.MicroEurekaApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MicroZuulApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="micro_zuul" />
       <extension name="coverage">
@@ -485,19 +409,19 @@
     </configuration>
     <list>
       <item itemvalue="Spring Boot.MicroCity2Application" />
-      <item itemvalue="Spring Boot.MicroEurekaApplication" />
-      <item itemvalue="Spring Boot.MicroCityApplication (1)" />
       <item itemvalue="Spring Boot.MicroCityApplication" />
       <item itemvalue="Spring Boot.MicroZuulApplication" />
       <item itemvalue="Spring Boot.MicroConfigApplication" />
+      <item itemvalue="Application.JWTServer" />
+      <item itemvalue="Application.JWTClient" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.JWTClient" />
+        <item itemvalue="Application.JWTServer" />
         <item itemvalue="Spring Boot.MicroZuulApplication" />
         <item itemvalue="Spring Boot.MicroConfigApplication" />
         <item itemvalue="Spring Boot.MicroCityApplication" />
-        <item itemvalue="Spring Boot.MicroCityApplication (1)" />
-        <item itemvalue="Spring Boot.MicroEurekaApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -593,6 +517,8 @@
       <workItem from="1592377947953" duration="20000" />
       <workItem from="1592806714832" duration="3580000" />
       <workItem from="1592810404858" duration="3936000" />
+      <workItem from="1592872519243" duration="605000" />
+      <workItem from="1593399677488" duration="2117000" />
     </task>
     <servers />
   </component>
@@ -629,10 +555,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207653000" />
+    <option name="totallyTimeSpent" value="210375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="1" />
@@ -641,10 +568,10 @@
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.22319035" />
+      <window_info content_ui="combo" id="Project" order="7" weight="0.31903484" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.33097595" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32956153" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.49433428" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.40452617" />
@@ -657,7 +584,7 @@
       <window_info anchor="bottom" id="Spring" order="12" weight="0.34512022" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32956153" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.20538244" />
-      <window_info anchor="bottom" id="Run Dashboard" order="15" visible="true" weight="0.18696883" />
+      <window_info anchor="bottom" id="Run Dashboard" order="15" weight="0.18696883" />
       <window_info anchor="bottom" id="JProfiler" order="16" weight="0.25176802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
@@ -679,10 +606,10 @@
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.17493297" />
+      <window_info content_ui="combo" id="Project" order="7" weight="0.31903484" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.33097595" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32956153" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.49433428" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.40452617" />
@@ -695,7 +622,7 @@
       <window_info anchor="bottom" id="Spring" order="12" weight="0.34512022" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32956153" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.20538244" />
-      <window_info anchor="bottom" id="Run Dashboard" order="15" weight="0.3243626" />
+      <window_info anchor="bottom" id="Run Dashboard" order="15" weight="0.18696883" />
       <window_info anchor="bottom" id="JProfiler" order="16" weight="0.25176802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
@@ -714,30 +641,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ABC/src/main/java/EmbeddedNeo4j.java" />
-    <entry file="file://$PROJECT_DIR$/project_neo4j/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_neo4j/src/main/java/com/yanqun/demo/EmbeddedNeo4j.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-641">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShiPinHao/src/main/java/Loop.java" />
-    <entry file="file://$PROJECT_DIR$/ShiPinHao/pom.xml" />
-    <entry file="jar://C:/Java/jdk1.8.0_101/src.zip!/java/lang/System.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="398" column="38" selection-start-line="398" selection-start-column="30" selection-end-line="398" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ShiPinHao/src/main/java/YunSuan.java" />
     <entry file="file://$PROJECT_DIR$/ShiPinHao/src/main/java/Demo.java" />
     <entry file="file://$PROJECT_DIR$/micro_city2/target/classes/application.yml">
@@ -990,17 +893,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/micro_city/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="6" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/micro_config/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
-          <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micro_city/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="6" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_hbase/src/main/java/HbaseDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_myJwt/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/jsonwebtoken/jjwt/0.9.1/jjwt-0.9.1.jar!/io/jsonwebtoken/Claims.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.8.0_101/jre/lib/jce.jar!/javax/crypto/spec/SecretKeySpec.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_myJwt/src/main/java/JWTServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="35" lean-forward="true" selection-end-line="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1457#1458#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_myJwt/src/main/java/JWTClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="26" column="46" lean-forward="true" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

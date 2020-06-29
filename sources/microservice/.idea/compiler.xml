@@ -13,6 +13,7 @@
         <module name="micro_people" />
         <module name="micro_httpclient" />
         <module name="project-webmagic" />
+        <module name="project_myJwt" />
         <module name="project_neo4j" />
         <module name="project_crawler" />
         <module name="micro_city" />
