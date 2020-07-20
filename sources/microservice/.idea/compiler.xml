@@ -12,8 +12,8 @@
         <module name="micro_config" />
         <module name="micro_people" />
         <module name="micro_httpclient" />
+        <module name="projct_httpclient" />
         <module name="project-webmagic" />
-        <module name="project_myJwt" />
         <module name="project_neo4j" />
         <module name="project_crawler" />
         <module name="micro_city" />
@@ -22,7 +22,7 @@
         <module name="project_jsoup" />
         <module name="project_hbase" />
         <module name="projectwebmagic" />
-        <module name="projct_httpclient" />
+        <module name="project_myJwt" />
         <module name="micro_city4" />
       </profile>
     </annotationProcessing>

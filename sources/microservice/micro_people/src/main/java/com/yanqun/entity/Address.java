@@ -1,16 +1,12 @@
 package com.yanqun.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 /*
  * Created by 颜群
  */
-@Entity
-@Table(name="tb_address")
+//@Entity
+//@Table(name="tb_address")
 public class Address {
-    @Id
+//    @Id
     private Integer id ;
     private String name ;
 

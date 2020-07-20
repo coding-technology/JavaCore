@@ -1,25 +1,28 @@
 server:
   port: 8885
 
-spring:
-  datasource:
-    username: root
-    password: root123
-    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.2.130/micro_people?characterEncodig=utf-8
-  jpa:
-    database: mysql
-    generate-ddl: true #利用jpa，根据实体类、自动生成相应的表
-    show-sql: true
-    #abcda: true  如果属性名写错，背景是黄色
-    properties:
-      hibernate:
-        dialect:
-          org.hibernate.dialect.MySQL5InnoDBDialect  # 默认 不加也可以；但如果 无法使用自动生成表的功能，则加上此句
+#spring:
+#  datasource:
+#    username: root
+#    password: root123
+#    driverClassName: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://192.168.2.130/micro_people?characterEncodig=utf-8
+#  jpa:
+#    database: mysql
+#    generate-ddl: true #利用jpa，根据实体类、自动生成相应的表
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        dialect:
+#          org.hibernate.dialect.MySQL5InnoDBDialect  # 默认 不加也可以；但如果 无法使用自动生成表的功能，则加上此句
 #    hibernate:
 #      ddl-auto: update
 
 
+jwt:
+  config:
+    key: yanqun
+    ttl: 1800000
 
 
 
