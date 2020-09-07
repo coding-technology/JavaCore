@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script type="text/javascript">
+            var webSocket = new WebSocket("ws://localhost:8888/myWebsocket") ;
+
+
+
+            //向服务端发送消息
+            function sendMessage(msg){
+                if(webSocket.readyState == webSocket.OPEN)
+                        webSocket.send(msg) ;
+            }
+
+            //接收服务端消息
+            webSocket.onmessage = function(event){
+                document.getElementById("tip").innerText = "接收的消息：" + event.data ;
+            }
+
+
+            //监听服务端是否开启
+            webSocket.onopen= function(event){
+                document.getElementById("tip").innerText ="连接开启" ;
+            }
+
+            //监听服务端是否关闭
+            webSocket.onclose= function(event){
+                document.getElementById("tip").innerText ="连接关闭" ;
+            }
+
+
+        </script>
+
+    </head>
+
+
+    <body>
+
+        <form>
+            <textarea name="message"></textarea>
+
+            <input type="button" onclick="sendMessage(this.form.message.value)" value="发送"/>
+        </form>
+
+
+      <div id="tip"></div>
+    </body>
+</html>
